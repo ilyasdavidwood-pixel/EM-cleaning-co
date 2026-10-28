@@ -10,11 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // MOBILE NAVIGATION
   // ========================================
 
-  const menuToggle = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
+  const menuToggle =
+    document.getElementById("menuToggle");
+
+  const mobileMenu =
+    document.getElementById("mobileMenu");
+
 
   function closeMenu() {
+
     mobileMenu.hidden = true;
+
     menuToggle.textContent = "☰";
 
     menuToggle.setAttribute(
@@ -26,7 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "aria-label",
       "Open menu"
     );
+
   }
+
 
   menuToggle.addEventListener("click", (event) => {
 
@@ -36,7 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mobileMenu.hidden = !isOpening;
 
-    menuToggle.textContent = isOpening ? "✕" : "☰";
+    menuToggle.textContent =
+      isOpening ? "✕" : "☰";
 
     menuToggle.setAttribute(
       "aria-expanded",
@@ -50,15 +59,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
+
   mobileMenu.querySelectorAll("a").forEach((link) => {
+
     link.addEventListener("click", closeMenu);
+
   });
 
+
   document.addEventListener("keydown", (event) => {
+
     if (event.key === "Escape") {
       closeMenu();
     }
+
   });
+
 
   document.addEventListener("click", (event) => {
 
@@ -74,11 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ========================================
-  // REAL CUSTOMER REVIEWS
+  // GENUINE CUSTOMER REVIEWS
   // ========================================
-
-  // Three reviews supplied by Erin.
-  // You can add more reviews here later.
 
   const reviews = [
 
@@ -152,78 +165,94 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createReviewCard(review) {
 
-    const card = document.createElement("article");
+    const card =
+      document.createElement("article");
+
     card.className = "review-card";
 
-    // Large quotation mark
-    const mark = document.createElement("div");
+
+    // Quotation mark
+    const mark =
+      document.createElement("div");
+
     mark.className = "review-mark";
     mark.textContent = "“";
 
-    // Customer review text
-    const quote = document.createElement("p");
+
+    // Review text
+    const quote =
+      document.createElement("p");
+
     quote.className = "customer-quote";
 
-    quote.textContent = `“${review.quote.trim()}”`;
+    quote.textContent =
+      `“${review.quote.trim()}”`;
 
-    // Review author details
-    const author = document.createElement("div");
+
+    // Customer details
+    const author =
+      document.createElement("div");
+
     author.className = "review-author";
 
-    const name = document.createElement("strong");
+
+    const name =
+      document.createElement("strong");
+
     name.textContent = review.name;
 
-    const source = document.createElement("small");
+
+    const source =
+      document.createElement("small");
 
     source.textContent =
       review.source || "Customer feedback";
+
 
     author.append(name, source);
 
     card.append(mark, quote, author);
 
     return card;
+
   }
 
 
   reviews.forEach((review) => {
+
     reviewsGrid.appendChild(
       createReviewCard(review)
     );
+
   });
 
 
   // ========================================
-  // DIRECT CONTACT FORM
+  // ORIGINAL EMAIL ENQUIRY FUNCTION
   // ========================================
 
-  // Uses FormSubmit.
+  // This version opens the visitor's email
+  // application with the form details filled in.
   //
-  // Customers submit directly from the page.
-  // They do not need to open their email app.
+  // It does not use FormSubmit or a backend.
   //
-  // IMPORTANT:
-  // Erin must activate the receiving address
-  // through the FormSubmit confirmation email.
+  // The customer must press Send in their
+  // email application.
 
-  const form = document.getElementById("quoteForm");
+  const form =
+    document.getElementById("quoteForm");
 
   const formError =
     document.getElementById("formError");
 
-  const formStatus =
-    document.getElementById("formStatus");
 
-  const submitButton =
-    form.querySelector('button[type="submit"]');
+  form.addEventListener("submit", (event) => {
 
-
-  form.addEventListener("submit", async (event) => {
-
+    // Stop the normal form submission
     event.preventDefault();
 
-    // Collect customer details
 
+    // Collect the visitor's information
     const name =
       document.getElementById("fullName").value.trim();
 
@@ -239,169 +268,96 @@ document.addEventListener("DOMContentLoaded", () => {
     const message =
       document.getElementById("message").value.trim();
 
-    const honeypot =
-      form.querySelector('[name="_honey"]')?.value || "";
 
-
-    // Clear previous messages
-
-    formError.hidden = true;
-    formStatus.hidden = true;
-
-    formStatus.classList.remove(
-      "is-error",
-      "is-success"
-    );
-
-
-    // Validate customer information
+    // ======================================
+    // VALIDATE THE FORM
+    // ======================================
 
     const emailPattern =
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 
     if (!name || !emailPattern.test(email)) {
 
       formError.hidden = false;
 
       if (!name) {
+
         document.getElementById("fullName").focus();
+
       } else {
+
         document.getElementById("email").focus();
+
       }
 
       return;
-    }
-
-
-    // Anti-spam protection
-
-    if (honeypot) {
-      return;
-    }
-
-
-    // Disable button during submission
-
-    submitButton.disabled = true;
-
-    const originalButtonLabel =
-      submitButton.innerHTML;
-
-    submitButton.textContent =
-      "Sending enquiry…";
-
-
-    // Send to FormSubmit
-
-    try {
-
-      const response = await fetch(
-        "https://formsubmit.co/ajax/emcleanandco@gmail.com",
-        {
-          method: "POST",
-
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
-
-          body: JSON.stringify({
-
-            name: name,
-
-            email: email,
-
-            postcode:
-              postcode || "Not provided",
-
-            phone:
-              phone || "Not provided",
-
-            message:
-              message ||
-              "Please contact me to discuss a free home visit.",
-
-            _subject:
-              `New E M Clean & Co home visit enquiry - ${name}`,
-
-            _replyto: email,
-
-            _template: "table",
-
-            _honey: honeypot
-
-          })
-        }
-      );
-
-
-      // Read the FormSubmit response
-
-      let data = {};
-
-      try {
-        data = await response.json();
-      } catch (_) {
-        // Continue to check the HTTP response.
-      }
-
-
-      // Check whether submission was accepted
-
-      if (
-        !response.ok ||
-        data.success === false ||
-        data.success === "false"
-      ) {
-        throw new Error(
-          "The form service did not accept the enquiry."
-        );
-      }
-
-
-      // Display confirmation message
-
-      formStatus.textContent =
-        "Thank you! Your enquiry has been submitted. " +
-        "Erin will be in touch to arrange your free home visit.";
-
-      formStatus.classList.add("is-success");
-
-      formStatus.hidden = false;
-
-
-      // Clear the form after accepted submission
-
-      form.reset();
-
-    } catch (error) {
-
-      // Display error message
-
-      formStatus.textContent =
-        "Sorry, your enquiry could not be sent. " +
-        "Please call Erin on 07787 404493 " +
-        "or email emcleanandco@gmail.com.";
-
-      formStatus.classList.add("is-error");
-
-      formStatus.hidden = false;
-
-      console.error(
-        "Home visit enquiry failed:",
-        error
-      );
-
-    } finally {
-
-      // Re-enable submit button
-
-      submitButton.disabled = false;
-
-      submitButton.innerHTML =
-        originalButtonLabel;
 
     }
+
+
+    // Hide validation error
+    formError.hidden = true;
+
+
+    // ======================================
+    // PREPARE THE EMAIL
+    // ======================================
+
+    const subject =
+      `Free home visit enquiry - ${name}`;
+
+
+    const body = [
+
+      "Hello Erin,",
+
+      "",
+
+      "I would like to enquire about a free home visit and cleaning quotation.",
+
+      "",
+
+      `Name: ${name}`,
+
+      `Email: ${email}`,
+
+      `Phone: ${phone || "Not provided"}`,
+
+      `Postcode: ${postcode || "Not provided"}`,
+
+      "",
+
+      "About my home / what I need:",
+
+      message || "Please get in touch to discuss.",
+
+      "",
+
+      "Thank you."
+
+    ].join("\n");
+
+
+    // ======================================
+    // OPEN THE VISITOR'S EMAIL APPLICATION
+    // ======================================
+
+    const mailtoLink =
+
+      "mailto:emcleanandco@gmail.com" +
+
+      `?subject=${encodeURIComponent(subject)}` +
+
+      `&body=${encodeURIComponent(body)}`;
+
+
+    // Opens Gmail, Outlook, Apple Mail or
+    // another configured email application.
+    //
+    // The visitor must press Send.
+
+    window.location.href = mailtoLink;
 
   });
 
@@ -430,8 +386,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-  // Respect reduced-motion preferences
-
   const reducedMotion =
     window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -443,29 +397,30 @@ document.addEventListener("DOMContentLoaded", () => {
     !reducedMotion
   ) {
 
-    const observer = new IntersectionObserver(
+    const observer =
+      new IntersectionObserver(
 
-      (entries) => {
+        (entries) => {
 
-        entries.forEach((entry) => {
+          entries.forEach((entry) => {
 
-          if (entry.isIntersecting) {
+            if (entry.isIntersecting) {
 
-            entry.target.classList.add("visible");
+              entry.target.classList.add("visible");
 
-            observer.unobserve(entry.target);
+              observer.unobserve(entry.target);
 
-          }
+            }
 
-        });
+          });
 
-      },
+        },
 
-      {
-        threshold: 0.08
-      }
+        {
+          threshold: 0.08
+        }
 
-    );
+      );
 
 
     animatedElements.forEach((element) => {
