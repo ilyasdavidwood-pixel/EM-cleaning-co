@@ -16,16 +16,26 @@ document.addEventListener("DOMContentLoaded", () => {
   function closeMenu() {
     mobileMenu.hidden = true;
     menuToggle.textContent = "☰";
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open menu");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    menuToggle.setAttribute(
+      "aria-label",
+      "Open menu"
+    );
   }
 
   menuToggle.addEventListener("click", (event) => {
+
     event.stopPropagation();
 
     const isOpening = mobileMenu.hidden;
 
     mobileMenu.hidden = !isOpening;
+
     menuToggle.textContent = isOpening ? "✕" : "☰";
 
     menuToggle.setAttribute(
@@ -37,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "aria-label",
       isOpening ? "Close menu" : "Open menu"
     );
+
   });
 
   mobileMenu.querySelectorAll("a").forEach((link) => {
@@ -50,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.addEventListener("click", (event) => {
+
     if (
       !mobileMenu.hidden &&
       !mobileMenu.contains(event.target) &&
@@ -57,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       closeMenu();
     }
+
   });
 
 
@@ -64,15 +77,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // REAL CUSTOMER REVIEWS
   // ========================================
 
-  // These are the three genuine reviews
-  // supplied for E M Clean & Co.
-  //
-  // To add another review later, simply
-  // add another object to this array.
+  // Three reviews supplied by Erin.
+  // You can add more reviews here later.
 
   const reviews = [
 
-    // REVIEW 1
+    // REVIEW ONE
     {
       quote:
         "Hi Erin. Thank you so much for the clean yesterday! " +
@@ -85,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
 
-    // REVIEW 2
+    // REVIEW TWO
     {
       quote:
         "We have Erin come to our house weekly and I honestly " +
@@ -117,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
 
-    // REVIEW 3
+    // REVIEW THREE
     {
       quote:
         "Old Stratford Renovations Ltd would like to thank " +
@@ -136,24 +146,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // DISPLAY CUSTOMER REVIEWS
   // ========================================
 
-  const reviewsGrid = document.getElementById("reviewsGrid");
+  const reviewsGrid =
+    document.getElementById("reviewsGrid");
+
 
   function createReviewCard(review) {
 
     const card = document.createElement("article");
     card.className = "review-card";
 
-    // Quotation mark
+    // Large quotation mark
     const mark = document.createElement("div");
     mark.className = "review-mark";
     mark.textContent = "“";
 
-    // Customer's review
+    // Customer review text
     const quote = document.createElement("p");
     quote.className = "customer-quote";
+
     quote.textContent = `“${review.quote.trim()}”`;
 
-    // Customer information
+    // Review author details
     const author = document.createElement("div");
     author.className = "review-author";
 
@@ -161,34 +174,55 @@ document.addEventListener("DOMContentLoaded", () => {
     name.textContent = review.name;
 
     const source = document.createElement("small");
-    source.textContent = review.source || "Customer feedback";
+
+    source.textContent =
+      review.source || "Customer feedback";
 
     author.append(name, source);
+
     card.append(mark, quote, author);
 
     return card;
   }
 
+
   reviews.forEach((review) => {
-    reviewsGrid.appendChild(createReviewCard(review));
+    reviewsGrid.appendChild(
+      createReviewCard(review)
+    );
   });
 
 
   // ========================================
-  // CONTACT FORM
+  // DIRECT CONTACT FORM
   // ========================================
 
-  // The enquiry form opens the customer's
-  // email application, with a prepared email.
+  // Uses FormSubmit.
   //
-  // The visitor must still press Send.
+  // Customers submit directly from the page.
+  // They do not need to open their email app.
+  //
+  // IMPORTANT:
+  // Erin must activate the receiving address
+  // through the FormSubmit confirmation email.
 
   const form = document.getElementById("quoteForm");
-  const formError = document.getElementById("formError");
 
-  form.addEventListener("submit", (event) => {
+  const formError =
+    document.getElementById("formError");
+
+  const formStatus =
+    document.getElementById("formStatus");
+
+  const submitButton =
+    form.querySelector('button[type="submit"]');
+
+
+  form.addEventListener("submit", async (event) => {
 
     event.preventDefault();
+
+    // Collect customer details
 
     const name =
       document.getElementById("fullName").value.trim();
@@ -205,10 +239,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const message =
       document.getElementById("message").value.trim();
 
+    const honeypot =
+      form.querySelector('[name="_honey"]')?.value || "";
 
-    // Validate name and email address
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Clear previous messages
+
+    formError.hidden = true;
+    formStatus.hidden = true;
+
+    formStatus.classList.remove(
+      "is-error",
+      "is-success"
+    );
+
+
+    // Validate customer information
+
+    const emailPattern =
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!name || !emailPattern.test(email)) {
 
@@ -223,38 +272,136 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    formError.hidden = true;
+
+    // Anti-spam protection
+
+    if (honeypot) {
+      return;
+    }
 
 
-    // Prepare the enquiry
+    // Disable button during submission
 
-    const subject = `Free home visit enquiry - ${name}`;
+    submitButton.disabled = true;
 
-    const body = [
-      "Hello Erin,",
-      "",
-      "I would like to enquire about a free home visit and cleaning quotation.",
-      "",
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone || "Not provided"}`,
-      `Postcode: ${postcode || "Not provided"}`,
-      "",
-      "About my home / what I need:",
-      message || "Please get in touch to discuss.",
-      "",
-      "Thank you."
-    ].join("\n");
+    const originalButtonLabel =
+      submitButton.innerHTML;
+
+    submitButton.textContent =
+      "Sending enquiry…";
 
 
-    // Open customer's email application
+    // Send to FormSubmit
 
-    const mailtoLink =
-      "mailto:emcleanandco@gmail.com" +
-      `?subject=${encodeURIComponent(subject)}` +
-      `&body=${encodeURIComponent(body)}`;
+    try {
 
-    window.location.href = mailtoLink;
+      const response = await fetch(
+        "https://formsubmit.co/ajax/emcleanandco@gmail.com",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+
+          body: JSON.stringify({
+
+            name: name,
+
+            email: email,
+
+            postcode:
+              postcode || "Not provided",
+
+            phone:
+              phone || "Not provided",
+
+            message:
+              message ||
+              "Please contact me to discuss a free home visit.",
+
+            _subject:
+              `New E M Clean & Co home visit enquiry - ${name}`,
+
+            _replyto: email,
+
+            _template: "table",
+
+            _honey: honeypot
+
+          })
+        }
+      );
+
+
+      // Read the FormSubmit response
+
+      let data = {};
+
+      try {
+        data = await response.json();
+      } catch (_) {
+        // Continue to check the HTTP response.
+      }
+
+
+      // Check whether submission was accepted
+
+      if (
+        !response.ok ||
+        data.success === false ||
+        data.success === "false"
+      ) {
+        throw new Error(
+          "The form service did not accept the enquiry."
+        );
+      }
+
+
+      // Display confirmation message
+
+      formStatus.textContent =
+        "Thank you! Your enquiry has been submitted. " +
+        "Erin will be in touch to arrange your free home visit.";
+
+      formStatus.classList.add("is-success");
+
+      formStatus.hidden = false;
+
+
+      // Clear the form after accepted submission
+
+      form.reset();
+
+    } catch (error) {
+
+      // Display error message
+
+      formStatus.textContent =
+        "Sorry, your enquiry could not be sent. " +
+        "Please call Erin on 07787 404493 " +
+        "or email emcleanandco@gmail.com.";
+
+      formStatus.classList.add("is-error");
+
+      formStatus.hidden = false;
+
+      console.error(
+        "Home visit enquiry failed:",
+        error
+      );
+
+    } finally {
+
+      // Re-enable submit button
+
+      submitButton.disabled = false;
+
+      submitButton.innerHTML =
+        originalButtonLabel;
+
+    }
 
   });
 
@@ -271,18 +418,33 @@ document.addEventListener("DOMContentLoaded", () => {
   // SCROLL REVEAL ANIMATIONS
   // ========================================
 
-  const animatedElements = document.querySelectorAll(
-    ".service-card, .trust-item, .about-content, " +
-    ".process-step, .review-card"
-  );
+  const animatedElements =
+    document.querySelectorAll(
 
-  const reducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
+      ".service-card, " +
+      ".trust-item, " +
+      ".about-content, " +
+      ".process-step, " +
+      ".review-card"
 
-  if ("IntersectionObserver" in window && !reducedMotion) {
+    );
+
+
+  // Respect reduced-motion preferences
+
+  const reducedMotion =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+  if (
+    "IntersectionObserver" in window &&
+    !reducedMotion
+  ) {
 
     const observer = new IntersectionObserver(
+
       (entries) => {
 
         entries.forEach((entry) => {
@@ -298,14 +460,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
       },
+
       {
         threshold: 0.08
       }
+
     );
 
+
     animatedElements.forEach((element) => {
+
       element.classList.add("reveal");
+
       observer.observe(element);
+
     });
 
   }
