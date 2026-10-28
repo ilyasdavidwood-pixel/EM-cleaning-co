@@ -61,36 +61,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ========================================
-  // WEBSITE CONTENT SETTINGS
+  // REAL CUSTOMER REVIEWS
   // ========================================
 
-  // You can hide the unfinished sections
-  // until Erin has photos and reviews.
-
-  const settings = {
-    showGallery: true,
-    showReviews: true
-  };
-
-
-  // ========================================
-  // CUSTOMER REVIEWS
-  // ========================================
-
-  // Add REAL customer reviews here.
-  // Get permission before publishing them.
+  // These are the three genuine reviews
+  // supplied for E M Clean & Co.
   //
-  // Example format:
-  //
-  // {
-  //   quote: "The customer's exact review.",
-  //   name: "Customer's approved display name",
-  //   source: "Facebook"
-  // }
+  // To add another review later, simply
+  // add another object to this array.
 
   const reviews = [
 
-    // Paste real reviews here.
+    // REVIEW 1
+    {
+      quote:
+        "Hi Erin. Thank you so much for the clean yesterday! " +
+        "My house looks stunning and the smell when I walked in " +
+        "was dreamy! Please can we sort a 2 hour weekly clean? " +
+        "Thanks again xx",
+
+      name: "Domestic cleaning customer",
+      source: "Customer message"
+    },
+
+
+    // REVIEW 2
+    {
+      quote:
+        "We have Erin come to our house weekly and I honestly " +
+        "couldn't recommend her enough. Every time she comes " +
+        "round, the house is left clean, fresh, and smelling lovely.\n\n" +
+
+        "From the start, Erin made me feel so comfortable. " +
+        "She is incredibly personable and friendly, and you " +
+        "can really tell how much she cares about the service " +
+        "she provides. She offered to do a meet and greet, " +
+        "which none of the other cleaners I contacted suggested. " +
+        "That really went a long way for me as it showed the level " +
+        "of care and professionalism she brings to her business.\n\n" +
+
+        "I chose Erin because I didn't want a big agency company " +
+        "coming into our home. I wanted someone self-employed " +
+        "who genuinely cares about their work and their clients, " +
+        "and Erin is exactly that.\n\n" +
+
+        "Every week she puts in so much time and effort and " +
+        "the results always show. It's such a nice feeling " +
+        "coming back into the house after she's been.\n\n" +
+
+        "Thank you Erin for always doing such a lovely job. " +
+        "We really appreciate everything you do 😊",
+
+      name: "Weekly cleaning customer",
+      source: "Customer testimonial"
+    },
+
+
+    // REVIEW 3
+    {
+      quote:
+        "Old Stratford Renovations Ltd would like to thank " +
+        "EM Clean & Co for doing a great job of a post building " +
+        "work clean after our last refurbishment of a three " +
+        "bed house. Great job 👍",
+
+      name: "Old Stratford Renovations Ltd",
+      source: "Customer testimonial"
+    }
 
   ];
 
@@ -101,29 +138,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const reviewsGrid = document.getElementById("reviewsGrid");
 
-  const validReviews = reviews.filter((review) => {
-    return (
-      review &&
-      typeof review.quote === "string" &&
-      review.quote.trim() &&
-      typeof review.name === "string" &&
-      review.name.trim()
-    );
-  });
-
-  function makeReviewCard(review) {
+  function createReviewCard(review) {
 
     const card = document.createElement("article");
     card.className = "review-card";
 
+    // Quotation mark
     const mark = document.createElement("div");
     mark.className = "review-mark";
     mark.textContent = "“";
 
+    // Customer's review
     const quote = document.createElement("p");
     quote.className = "customer-quote";
     quote.textContent = `“${review.quote.trim()}”`;
 
+    // Customer information
     const author = document.createElement("div");
     author.className = "review-author";
 
@@ -139,130 +169,19 @@ document.addEventListener("DOMContentLoaded", () => {
     return card;
   }
 
-  function makePlaceholder(title, description) {
-
-    const card = document.createElement("article");
-    card.className = "review-card review-placeholder";
-
-    const mark = document.createElement("div");
-    mark.className = "review-mark";
-    mark.textContent = "“";
-
-    const heading = document.createElement("h3");
-    heading.textContent = title;
-
-    const paragraph = document.createElement("p");
-    paragraph.textContent = description;
-
-    const label = document.createElement("small");
-    label.textContent = "REVIEW PLACEHOLDER — NOT A CUSTOMER QUOTE";
-
-    card.append(mark, heading, paragraph, label);
-
-    return card;
-  }
-
-  if (validReviews.length > 0) {
-
-    validReviews.slice(0, 6).forEach((review) => {
-      reviewsGrid.appendChild(makeReviewCard(review));
-    });
-
-    document.querySelector(".reviews-heading p").textContent =
-      "A few lovely words shared by our customers.";
-
-  } else {
-
-    const placeholders = [
-      {
-        title: "Your first lovely review",
-        description: "Add a genuine quote from a customer here."
-      },
-      {
-        title: "Another kind word",
-        description: "A second customer review will look lovely here."
-      },
-      {
-        title: "A little appreciation",
-        description: "A third piece of genuine feedback goes here."
-      }
-    ];
-
-    placeholders.forEach((item) => {
-      reviewsGrid.appendChild(
-        makePlaceholder(item.title, item.description)
-      );
-    });
-
-  }
-
-
-  // ========================================
-  // CLEANING RESULTS GALLERY
-  // ========================================
-
-  // Add these files to your GitHub repository:
-  //
-  // assets/results/result-01.jpg
-  // assets/results/result-02.jpg
-  // assets/results/result-03.jpg
-  //
-  // Only use genuine photos with permission.
-
-  const galleryImages =
-    document.querySelectorAll("[data-gallery-image]");
-
-  galleryImages.forEach((image) => {
-
-    const card = image.closest(".gallery-card");
-
-    function checkImage() {
-      if (image.naturalWidth > 0) {
-        card.classList.add("has-photo");
-      } else {
-        card.classList.remove("has-photo");
-      }
-    }
-
-    image.addEventListener("load", checkImage);
-
-    image.addEventListener("error", () => {
-      card.classList.remove("has-photo");
-    });
-
-    if (image.complete) {
-      checkImage();
-    }
-
+  reviews.forEach((review) => {
+    reviewsGrid.appendChild(createReviewCard(review));
   });
-
-
-  // ========================================
-  // OPTIONAL SECTION VISIBILITY
-  // ========================================
-
-  if (!settings.showGallery) {
-    document.getElementById("results").hidden = true;
-
-    document.querySelectorAll('a[href="#results"]')
-      .forEach((link) => {
-        link.hidden = true;
-      });
-  }
-
-  if (!settings.showReviews) {
-    document.getElementById("reviews").hidden = true;
-
-    document.querySelectorAll('a[href="#reviews"]')
-      .forEach((link) => {
-        link.hidden = true;
-      });
-  }
 
 
   // ========================================
   // CONTACT FORM
   // ========================================
+
+  // The enquiry form opens the customer's
+  // email application, with a prepared email.
+  //
+  // The visitor must still press Send.
 
   const form = document.getElementById("quoteForm");
   const formError = document.getElementById("formError");
@@ -287,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("message").value.trim();
 
 
-    // Validate name and email
+    // Validate name and email address
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -307,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formError.hidden = true;
 
 
-    // Prepare enquiry email
+    // Prepare the enquiry
 
     const subject = `Free home visit enquiry - ${name}`;
 
@@ -341,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ========================================
-  // FOOTER COPYRIGHT YEAR
+  // AUTOMATIC COPYRIGHT YEAR
   // ========================================
 
   document.getElementById("year").textContent =
@@ -354,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const animatedElements = document.querySelectorAll(
     ".service-card, .trust-item, .about-content, " +
-    ".process-step, .gallery-card, .review-card"
+    ".process-step, .review-card"
   );
 
   const reducedMotion = window.matchMedia(
