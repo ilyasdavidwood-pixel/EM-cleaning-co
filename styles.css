@@ -1587,7 +1587,9 @@ p {
    ========================================= */
 
 @media (max-width: 960px) {
-
+.trust-item:nth-child(3) {
+  padding-left: 0;
+}
   .container {
     width: calc(100% - 54px);
   }
