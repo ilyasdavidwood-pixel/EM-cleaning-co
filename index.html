@@ -5,12 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#64243d">
-  <meta name="description" content="E M Clean & Co offers professional domestic cleaning in Kettering and surrounding areas. 8 years of experience, fully insured, DBS checked and free home visits for quotations.">
 
-  <title>E M Clean & Co | Domestic Cleaning in Kettering</title>
+  <meta name="description"
+    content="E M Clean & Co provides professional home cleaning in Kettering and surrounding areas. 8 years' experience, fully insured, DBS checked and free home visit quotations.">
+
+  <title>E M Clean & Co | Home Cleaning in Kettering</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
@@ -19,7 +22,7 @@
 
 <body>
 
-  <!-- TOP ANNOUNCEMENT -->
+  <!-- ANNOUNCEMENT BAR -->
   <div class="announcement">
     <div class="container announcement-inner">
       <span>✦ A little extra care for the place you call home</span>
@@ -27,11 +30,15 @@
     </div>
   </div>
 
-  <!-- NAVIGATION -->
-  <header class="header">
+  <!-- HEADER -->
+  <header class="header" id="home">
     <div class="container nav">
-      <a href="#home" class="logo" aria-label="E M Clean & Co home">
-        <span class="logo-icon">✦</span>
+
+      <a href="#home" class="logo" aria-label="E M Clean and Co homepage">
+        <span class="logo-icon">
+          <img src="assets/logos/em-logo.png" alt="">
+        </span>
+
         <span class="logo-text">
           <strong>E M CLEAN <span>&</span> CO</strong>
           <small>HOME CLEANING · KETTERING</small>
@@ -41,38 +48,70 @@
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="#services">What we do</a>
         <a href="#about">Our story</a>
-        <a href="#results">Our work</a>
         <a href="#reviews">Kind words</a>
       </nav>
 
       <div class="nav-actions">
+
+        <div class="social-links header-social">
+          <a href="https://www.facebook.com/profile.php?id=61579246101354"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="E M Clean and Co on Facebook"
+             title="Facebook">
+            <span class="facebook-symbol">f</span>
+          </a>
+
+          <a href="https://www.instagram.com/emcleanandco/?hl=en"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="E M Clean and Co on Instagram"
+             title="Instagram">
+            <span class="instagram-symbol">◎</span>
+          </a>
+        </div>
+
         <a class="phone-link" href="tel:+447787404493">
           07787 404493
         </a>
+
         <a href="#contact" class="btn btn-primary nav-cta">
           Get a free quote <span>→</span>
         </a>
-        <button id="menuToggle" class="menu-toggle"
-          type="button" aria-expanded="false"
-          aria-controls="mobileMenu" aria-label="Open menu">
+
+        <button id="menuToggle"
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+          aria-label="Open menu">
           ☰
         </button>
+
       </div>
     </div>
 
-    <nav id="mobileMenu" class="mobile-menu" aria-label="Mobile navigation" hidden>
+    <nav id="mobileMenu"
+         class="mobile-menu"
+         aria-label="Mobile navigation"
+         hidden>
       <a href="#services">What we do</a>
       <a href="#about">Our story</a>
-      <a href="#results">Our work</a>
       <a href="#reviews">Kind words</a>
       <a href="#contact">Get a free quote</a>
+
+      <a href="https://www.facebook.com/profile.php?id=61579246101354"
+         target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+
+      <a href="https://www.instagram.com/emcleanandco/?hl=en"
+         target="_blank" rel="noopener noreferrer">Instagram ↗</a>
     </nav>
   </header>
 
   <main>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
+    <!-- HERO -->
+    <section class="hero">
       <div class="container hero-grid">
 
         <div class="hero-content">
@@ -101,6 +140,7 @@
 
           <div class="hero-trust">
             <span class="hero-trust-icon">✓</span>
+
             <div>
               <strong>Experience you can feel good about</strong>
               <small>
@@ -111,10 +151,12 @@
         </div>
 
         <div class="hero-visual">
+
+          <!-- ERIN'S FIRST BATHROOM PHOTO -->
           <div class="hero-image">
             <img
-              src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1100&q=82&auto=format&fit=crop"
-              alt="Beautifully presented living room"
+              src="assets/photos/hero-bathroom.jpg"
+              alt="Clean bathroom with white tiles and a pedestal sink"
             >
           </div>
 
@@ -125,6 +167,7 @@
 
           <div class="hero-floating-card">
             <span class="floating-icon">⌂</span>
+
             <div>
               <strong>Made for your home</strong>
               <small>Personalised quotes, no pressure.</small>
@@ -134,8 +177,8 @@
           <span class="hero-image-caption">
             FRESH SPACES · CALMER DAYS
           </span>
-        </div>
 
+        </div>
       </div>
     </section>
 
@@ -209,7 +252,10 @@
         <div class="section-heading">
           <div>
             <span class="section-label">THE SPACES THAT MATTER</span>
-            <h2>A little sparkle, <em>room by room.</em></h2>
+
+            <h2>
+              A little sparkle, <em>room by room.</em>
+            </h2>
           </div>
 
           <p>
@@ -221,66 +267,68 @@
 
         <div class="services-grid">
 
+          <!-- KITCHEN PHOTO -->
           <article class="service-card">
+
             <div class="service-image">
-              <img
-                src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=900&q=80&auto=format&fit=crop"
-                alt="Bright kitchen interior"
-                loading="lazy"
-              >
-              <span class="image-disclaimer">ILLUSTRATIVE PHOTO</span>
+              <img src="assets/photos/kitchen.jpg"
+                   alt="Freshly cleaned kitchen sink and countertop"
+                   loading="lazy">
             </div>
 
             <div class="service-content">
               <small>01 / HOME CARE</small>
               <h3>Kitchens & everyday spaces</h3>
+
               <p>
                 For the busy, lived-in areas that deserve
                 a little extra attention.
               </p>
             </div>
+
           </article>
 
+          <!-- BATHROOM PHOTO -->
           <article class="service-card">
+
             <div class="service-image">
-              <img
-                src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=900&q=80&auto=format&fit=crop"
-                alt="Clean modern bathroom"
-                loading="lazy"
-              >
-              <span class="image-disclaimer">ILLUSTRATIVE PHOTO</span>
+              <img src="assets/photos/bathroom.jpg"
+                   alt="Beautifully cleaned modern bathroom and bathtub"
+                   loading="lazy">
             </div>
 
             <div class="service-content">
               <small>02 / FRESH SPACES</small>
               <h3>Bathrooms & finishing touches</h3>
+
               <p>
                 Talk us through the places you want looking
                 and feeling their best.
               </p>
             </div>
+
           </article>
 
+          <!-- LIVING ROOM PHOTO -->
           <article class="service-card">
+
             <div class="service-image">
-              <img
-                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=80&auto=format&fit=crop"
-                alt="Comfortable, tidy living room"
-                loading="lazy"
-              >
-              <span class="image-disclaimer">ILLUSTRATIVE PHOTO</span>
+              <img src="assets/photos/living-room.jpg"
+                   alt="Clean carpeted dining and living area"
+                   loading="lazy">
             </div>
 
             <div class="service-content">
               <small>03 / YOUR PRIORITIES</small>
               <h3>Living areas & beyond</h3>
+
               <p>
                 A thoughtful approach shaped around
                 the way you use your home.
               </p>
             </div>
-          </article>
 
+          </article>
         </div>
 
         <div class="services-footer">
@@ -302,10 +350,11 @@
       <div class="container about-grid">
 
         <div class="about-visual">
+
           <div class="about-image">
             <img
               src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&q=80&auto=format&fit=crop"
-              alt="Bright, welcoming home interior"
+              alt="Bright and welcoming home interior"
               loading="lazy"
             >
           </div>
@@ -325,6 +374,7 @@
         </div>
 
         <div class="about-content">
+
           <span class="section-label">
             A FRIENDLY FACE BEHIND THE CLEAN
           </span>
@@ -364,14 +414,13 @@
     </section>
 
     <!-- HOW IT WORKS -->
-    <section class="process section-padding">
+    <section class="process section-padding" id="how-it-works">
       <div class="container">
 
         <div class="process-heading">
           <span class="section-label">NICE & SIMPLE</span>
 
           <h2>A cleaner home starts <em>here.</em></h2>
-
           <p>Getting started couldn't be easier.</p>
         </div>
 
@@ -380,6 +429,7 @@
           <div class="process-step">
             <span class="step-number">01</span>
             <h3>Say hello</h3>
+
             <p>
               Get in touch and tell us a little about
               your home and what you're looking for.
@@ -389,6 +439,7 @@
           <div class="process-step">
             <span class="step-number">02</span>
             <h3>Free home visit</h3>
+
             <p>
               We'll arrange a convenient time to meet
               and chat through your cleaning priorities.
@@ -398,6 +449,7 @@
           <div class="process-step">
             <span class="step-number">03</span>
             <h3>Your personal quote</h3>
+
             <p>
               You'll receive a quotation based on your
               home and your individual needs.
@@ -415,119 +467,35 @@
       </div>
     </section>
 
-    <!-- CLIENT RESULTS GALLERY -->
-    <section class="results section-padding" id="results">
-      <div class="container">
+    <!--
+      CLIENT RESULTS GALLERY REMOVED
+      AS REQUESTED
+    -->
 
-        <div class="section-heading">
-          <div>
-            <span class="section-label">REAL HOMES, REAL RESULTS</span>
-            <h2>The results speak <em>for themselves.</em></h2>
-          </div>
-
-          <p>
-            We're saving this space for real photos of our work.
-            Every image here will be a genuine result, shared
-            with the customer's permission.
-          </p>
-        </div>
-
-        <div class="gallery-grid">
-
-          <figure class="gallery-card">
-            <div class="gallery-image">
-              <img src="assets/results/result-01.jpg"
-                   alt="Cleaning result one"
-                   loading="lazy"
-                   data-gallery-image>
-
-              <div class="gallery-placeholder">
-                <span>▧</span>
-                <strong>Your work goes here</strong>
-                <small>Add a real cleaning result photo</small>
-              </div>
-            </div>
-
-            <figcaption>
-              <small>RESULT 01</small>
-              <strong>Before & after the magic</strong>
-            </figcaption>
-          </figure>
-
-          <figure class="gallery-card">
-            <div class="gallery-image">
-              <img src="assets/results/result-02.jpg"
-                   alt="Cleaning result two"
-                   loading="lazy"
-                   data-gallery-image>
-
-              <div class="gallery-placeholder">
-                <span>▧</span>
-                <strong>A detail worth showing</strong>
-                <small>Add a close-up cleaning photo</small>
-              </div>
-            </div>
-
-            <figcaption>
-              <small>RESULT 02</small>
-              <strong>The little details</strong>
-            </figcaption>
-          </figure>
-
-          <figure class="gallery-card">
-            <div class="gallery-image">
-              <img src="assets/results/result-03.jpg"
-                   alt="Cleaning result three"
-                   loading="lazy"
-                   data-gallery-image>
-
-              <div class="gallery-placeholder">
-                <span>▧</span>
-                <strong>Another happy space</strong>
-                <small>Add a finished-room photo</small>
-              </div>
-            </div>
-
-            <figcaption>
-              <small>RESULT 03</small>
-              <strong>A fresh finish</strong>
-            </figcaption>
-          </figure>
-
-        </div>
-
-        <p class="gallery-note">
-          These are photo placeholders. Replace them with
-          real cleaning photographs before publishing the finished site.
-        </p>
-
-      </div>
-    </section>
-
-    <!-- CUSTOMER REVIEWS -->
+    <!-- REAL CUSTOMER REVIEWS -->
     <section class="reviews section-padding" id="reviews">
       <div class="container">
 
         <div class="reviews-heading">
           <span class="section-label">KIND WORDS</span>
+
           <h2>Good work deserves <em>kind words.</em></h2>
+
           <p>
-            We'll share real feedback from customers here,
-            with their permission.
+            A few lovely words shared by our customers.
           </p>
         </div>
 
-        <!-- JavaScript inserts the review cards here -->
+        <!-- Reviews added automatically by script.js -->
         <div class="reviews-grid" id="reviewsGrid"></div>
 
         <div class="reviews-bottom">
           <span>♡ Real experiences, from real customers.</span>
-          <a
-            href="https://www.facebook.com/people/EM-Clean-Co/61579246101354/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-link"
-          >
+
+          <a href="https://www.facebook.com/profile.php?id=61579246101354"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="text-link">
             Find us on Facebook <span>→</span>
           </a>
         </div>
@@ -541,6 +509,7 @@
 
         <div>
           <span class="section-label">GOOD TO KNOW</span>
+
           <h2>A few little <em>questions?</em></h2>
 
           <p>
@@ -599,13 +568,12 @@
       <div class="container contact-grid">
 
         <div class="contact-info">
+
           <span class="section-label">
             LET'S TALK ABOUT YOUR HOME
           </span>
 
-          <h2>
-            Ready to come home to <em>lovely?</em>
-          </h2>
+          <h2>Ready to come home to <em>lovely?</em></h2>
 
           <p>
             Tell us a little about what you're looking for,
@@ -615,8 +583,10 @@
 
           <div class="contact-divider"></div>
 
+          <!-- PHONE -->
           <div class="contact-detail">
             <span class="contact-detail-icon">☎</span>
+
             <div>
               <small>GIVE US A CALL</small>
               <a href="tel:+447787404493">
@@ -625,8 +595,10 @@
             </div>
           </div>
 
+          <!-- EMAIL -->
           <div class="contact-detail">
             <span class="contact-detail-icon">✉</span>
+
             <div>
               <small>DROP US AN EMAIL</small>
               <a href="mailto:emcleanandco@gmail.com">
@@ -635,15 +607,47 @@
             </div>
           </div>
 
+          <!-- LOCATION -->
           <div class="contact-detail">
             <span class="contact-detail-icon">⌖</span>
+
             <div>
               <small>WHERE WE WORK</small>
               <strong>Kettering & surrounding areas</strong>
             </div>
           </div>
+
+          <!-- FACEBOOK -->
+          <div class="contact-detail">
+            <span class="contact-detail-icon">f</span>
+
+            <div>
+              <small>FOLLOW US ON FACEBOOK</small>
+              <a href="https://www.facebook.com/profile.php?id=61579246101354"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Facebook ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- INSTAGRAM -->
+          <div class="contact-detail">
+            <span class="contact-detail-icon">◎</span>
+
+            <div>
+              <small>FOLLOW US ON INSTAGRAM</small>
+              <a href="https://www.instagram.com/emcleanandco/?hl=en"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Instagram ↗
+              </a>
+            </div>
+          </div>
+
         </div>
 
+        <!-- ENQUIRY FORM -->
         <div class="contact-card">
 
           <div class="contact-form-heading">
@@ -657,85 +661,78 @@
             <div class="form-row">
               <label>
                 Full name *
-                <input
-                  type="text"
-                  name="name"
-                  id="fullName"
-                  placeholder="Your name"
-                  autocomplete="name"
-                  maxlength="100"
-                  required
-                >
+                <input type="text"
+                       id="fullName"
+                       name="name"
+                       placeholder="Your name"
+                       autocomplete="name"
+                       maxlength="100"
+                       required>
               </label>
 
               <label>
                 Postcode
-                <input
-                  type="text"
-                  name="postcode"
-                  id="postcode"
-                  placeholder="e.g. NN15"
-                  autocomplete="postal-code"
-                  maxlength="16"
-                >
+                <input type="text"
+                       id="postcode"
+                       name="postcode"
+                       placeholder="e.g. NN15"
+                       autocomplete="postal-code"
+                       maxlength="16">
               </label>
             </div>
 
             <div class="form-row">
               <label>
                 Email address *
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="you@example.com"
-                  autocomplete="email"
-                  maxlength="150"
-                  required
-                >
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="you@example.com"
+                       autocomplete="email"
+                       maxlength="150"
+                       required>
               </label>
 
               <label>
                 Phone number
-                <input
-                  type="tel"
-                  name="phone"
-                  id="phone"
-                  placeholder="Your phone number"
-                  autocomplete="tel"
-                  maxlength="35"
-                >
+                <input type="tel"
+                       id="phone"
+                       name="phone"
+                       placeholder="Your phone number"
+                       autocomplete="tel"
+                       maxlength="35">
               </label>
             </div>
 
             <label>
               Tell us a little about your home
-              <textarea
-                name="message"
-                id="message"
-                rows="4"
-                maxlength="1500"
-                placeholder="What would you like a hand with?"
-              ></textarea>
+              <textarea id="message"
+                        name="message"
+                        rows="4"
+                        maxlength="1500"
+                        placeholder="What would you like a hand with?"></textarea>
             </label>
 
             <p class="form-disclaimer">
               This button opens your email app with your enquiry
-              ready to send. Nothing is submitted or stored on
-              this website.
+              ready to send. Nothing is submitted or stored
+              on this website.
             </p>
 
             <button type="submit" class="btn btn-primary submit-btn">
               Prepare my free quote enquiry <span>→</span>
             </button>
 
-            <p id="formError" class="form-error" role="alert" hidden>
+            <p id="formError"
+               class="form-error"
+               role="alert"
+               hidden>
               Please enter your name and a valid email address.
             </p>
 
           </form>
-
         </div>
+
       </div>
     </section>
 
@@ -743,11 +740,17 @@
 
   <!-- FOOTER -->
   <footer class="footer">
+
     <div class="container footer-grid">
 
       <div class="footer-about">
+
         <a href="#home" class="logo footer-logo">
-          <span class="logo-icon">✦</span>
+          <span class="logo-icon">
+            <img src="assets/logos/em-logo.png"
+                 alt="">
+          </span>
+
           <span class="logo-text">
             <strong>E M CLEAN <span>&</span> CO</strong>
             <small>HOME CLEANING · KETTERING</small>
@@ -755,46 +758,75 @@
         </a>
 
         <p>
-          Friendly, professional home cleaning with a
-          personal touch, in Kettering and surrounding areas.
+          Friendly, professional home cleaning with a personal
+          touch, in Kettering and surrounding areas.
         </p>
+
       </div>
 
       <div class="footer-links">
         <h4>Explore</h4>
         <a href="#services">What we do</a>
         <a href="#about">Meet Erin</a>
-        <a href="#results">Our work</a>
         <a href="#reviews">Kind words</a>
       </div>
 
       <div class="footer-links">
         <h4>Get in touch</h4>
-        <a href="tel:+447787404493">07787 404493</a>
+
+        <a href="tel:+447787404493">
+          07787 404493
+        </a>
+
         <a href="mailto:emcleanandco@gmail.com">
           emcleanandco@gmail.com
         </a>
-        <a
-          href="https://www.facebook.com/people/EM-Clean-Co/61579246101354/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        <a href="https://www.facebook.com/profile.php?id=61579246101354"
+           target="_blank" rel="noopener noreferrer">
           Facebook ↗
+        </a>
+
+        <a href="https://www.instagram.com/emcleanandco/?hl=en"
+           target="_blank" rel="noopener noreferrer">
+          Instagram ↗
         </a>
       </div>
 
     </div>
 
+    <!-- BOTTOM FOOTER -->
     <div class="container footer-bottom">
+
       <span>
         © <span id="year">2026</span>
         E M Clean & Co. All rights reserved.
       </span>
 
-      <span>Made with care in Kettering ♡</span>
+      <!-- YOUR BUSINESS CREDIT -->
+      <span class="developer-credit">
+        Website made by
+
+        <a href="https://www.instagram.com/sabrshawq/?hl=en"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <img src="assets/logos/sabr-shawq-logo.png"
+               alt="Sabr and Shawq logo">
+
+          Sabr & Shawq ↗
+        </a>
+      </span>
+
+      <span>
+        Made with care in Kettering ♡
+      </span>
+
     </div>
+
   </footer>
 
+  <!-- MOBILE STICKY BUTTON -->
   <a href="#contact" class="mobile-quote-button">
     Book a free home visit →
   </a>
