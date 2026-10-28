@@ -1,15 +1,15 @@
 
 /* =========================================
-   E M CLEAN & CO
-   MAROON & BLUSH WEBSITE
+   E M CLEAN & CO — WEBSITE STYLING
+   Maroon, blush pink and warm ivory
    ========================================= */
 
 :root {
   --maroon: #64243d;
   --maroon-dark: #4b1b30;
   --maroon-light: #915069;
-  --dusty-rose: #c899a9;
   --rose: #b35f7c;
+  --dusty-rose: #c899a9;
   --pale-pink: #faedf1;
   --blush: #f9eef2;
   --cream: #fff8fa;
@@ -26,7 +26,7 @@
   --shadow: 0 24px 65px rgba(75, 27, 48, 0.11);
 }
 
-/* GENERAL RESET */
+/* GENERAL */
 
 * {
   margin: 0;
@@ -40,9 +40,9 @@ html {
 }
 
 body {
+  font-family: var(--font-body);
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -53,9 +53,7 @@ a {
   text-decoration: none;
 }
 
-button,
-input,
-textarea {
+button, input, textarea {
   font: inherit;
 }
 
@@ -85,7 +83,7 @@ img {
 
 .container {
   width: min(1180px, calc(100% - 88px));
-  margin-inline: auto;
+  margin: 0 auto;
 }
 
 .section-padding {
@@ -101,9 +99,7 @@ img {
   text-transform: uppercase;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: var(--font-heading);
   font-weight: 400;
 }
@@ -114,8 +110,7 @@ h2 {
   letter-spacing: -1.6px;
 }
 
-h2 em,
-h1 em {
+h1 em, h2 em {
   color: var(--rose);
   font-weight: 400;
 }
@@ -123,6 +118,8 @@ h1 em {
 p {
   line-height: 1.85;
 }
+
+/* BUTTONS */
 
 .btn {
   display: inline-flex;
@@ -133,7 +130,6 @@ p {
   padding: 16px 23px;
   border: 1px solid transparent;
   border-radius: 9px;
-  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 800;
   line-height: 1.3;
@@ -151,13 +147,11 @@ p {
 
 .btn span {
   font-size: 19px;
-  font-weight: 400;
-  line-height: 1;
 }
 
 .btn-primary {
   background: var(--maroon);
-  color: var(--white);
+  color: white;
 }
 
 .btn-primary:hover {
@@ -202,9 +196,7 @@ p {
   transform: translateX(4px);
 }
 
-/* =========================================
-   TOP ANNOUNCEMENT
-   ========================================= */
+/* ANNOUNCEMENT BAR */
 
 .announcement {
   height: 35px;
@@ -222,9 +214,7 @@ p {
   height: 100%;
 }
 
-/* =========================================
-   NAVIGATION
-   ========================================= */
+/* HEADER */
 
 .header {
   position: relative;
@@ -256,8 +246,14 @@ p {
   height: 45px;
   border-radius: 13px;
   background: var(--maroon);
-  color: white;
-  font-size: 25px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .logo-text {
@@ -307,7 +303,7 @@ p {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .phone-link {
@@ -332,6 +328,47 @@ p {
   padding: 8px;
 }
 
+/* FACEBOOK AND INSTAGRAM ICONS */
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-links a {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e9d2db;
+  border-radius: 8px;
+  background: #fff7fa;
+  color: var(--maroon);
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.2s;
+}
+
+.social-links a:hover {
+  background: var(--maroon);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.facebook-symbol {
+  font-family: Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.instagram-symbol {
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .mobile-menu {
   position: absolute;
   top: 100%;
@@ -350,9 +387,7 @@ p {
   font-weight: 700;
 }
 
-/* =========================================
-   HERO
-   ========================================= */
+/* HERO */
 
 .hero {
   position: relative;
@@ -444,6 +479,8 @@ p {
   color: #9b7a89;
   font-size: 10px;
 }
+
+/* HERO PHOTOGRAPH */
 
 .hero-visual {
   position: relative;
@@ -546,9 +583,7 @@ p {
   letter-spacing: 2px;
 }
 
-/* =========================================
-   TRUST STRIP
-   ========================================= */
+/* TRUST STRIP */
 
 .trust-strip {
   background: white;
@@ -607,9 +642,7 @@ p {
   font-size: 10px;
 }
 
-/* =========================================
-   INTRO
-   ========================================= */
+/* INTRODUCTION */
 
 .intro {
   padding-top: 120px;
@@ -627,15 +660,13 @@ p {
 
 .intro p {
   max-width: 660px;
-  margin-inline: auto;
+  margin: 0 auto;
   color: var(--text);
   font-size: 15px;
   line-height: 1.95;
 }
 
-/* =========================================
-   SERVICES
-   ========================================= */
+/* SERVICES */
 
 .services {
   background: var(--blush);
@@ -703,19 +734,6 @@ p {
   transform: scale(1.045);
 }
 
-.image-disclaimer {
-  position: absolute;
-  right: 12px;
-  bottom: 13px;
-  padding: 6px 9px;
-  border-radius: 3px;
-  background: rgba(255, 251, 250, 0.9);
-  color: #7e4b61;
-  font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 1.2px;
-}
-
 .service-content {
   padding: 27px 25px 28px;
 }
@@ -753,9 +771,7 @@ p {
   font-size: 12px;
 }
 
-/* =========================================
-   ABOUT ERIN
-   ========================================= */
+/* ABOUT ERIN */
 
 .about {
   background: var(--paper);
@@ -882,9 +898,7 @@ p {
   letter-spacing: 1.7px;
 }
 
-/* =========================================
-   HOW IT WORKS
-   ========================================= */
+/* HOW IT WORKS */
 
 .process {
   position: relative;
@@ -902,7 +916,7 @@ p {
 }
 
 .process-heading h2 {
-  margin: 15px 0 15px;
+  margin: 15px 0;
   color: white;
 }
 
@@ -955,135 +969,7 @@ p {
   text-align: center;
 }
 
-/* =========================================
-   RESULTS GALLERY
-   ========================================= */
-
-.results {
-  background: #fffcfb;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 21px;
-}
-
-.gallery-card {
-  overflow: hidden;
-  margin: 0;
-  border: 1px solid #eddae2;
-  border-radius: 12px;
-  background: white;
-  transition: transform 0.3s;
-}
-
-.gallery-card:hover {
-  transform: translateY(-4px);
-}
-
-.gallery-image {
-  position: relative;
-  height: 295px;
-  overflow: hidden;
-}
-
-.gallery-image > img {
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-}
-
-.gallery-card.has-photo .gallery-image > img {
-  opacity: 1;
-}
-
-.gallery-card.has-photo .gallery-placeholder {
-  display: none;
-}
-
-.gallery-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 25px;
-  background:
-    radial-gradient(circle at center,
-      #eed2de 1px, transparent 1px),
-    linear-gradient(140deg, #fcebf1, #f1d9e2);
-  background-size: 19px 19px, auto;
-  text-align: center;
-}
-
-.gallery-placeholder::before {
-  content: "";
-  position: absolute;
-  inset: 15px;
-  border: 1px dashed #d8a8bb;
-  border-radius: 9px;
-}
-
-.gallery-placeholder > span {
-  display: grid;
-  place-items: center;
-  width: 65px;
-  height: 65px;
-  margin-bottom: 15px;
-  border-radius: 50%;
-  background: #fff8fa;
-  color: #b97792;
-  font-size: 30px;
-}
-
-.gallery-placeholder strong {
-  color: #96536f;
-  font-family: var(--font-heading);
-  font-size: 26px;
-  font-style: italic;
-  font-weight: 400;
-}
-
-.gallery-placeholder small {
-  margin-top: 7px;
-  color: #a98896;
-  font-size: 11px;
-}
-
-.gallery-card figcaption {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 18px 20px 20px;
-}
-
-.gallery-card figcaption small {
-  color: #a17889;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1.4px;
-}
-
-.gallery-card figcaption strong {
-  font-size: 13px;
-}
-
-.gallery-note {
-  margin-top: 25px;
-  color: #927581;
-  font-size: 11px;
-  text-align: center;
-}
-
-/* =========================================
-   CUSTOMER REVIEWS
-   ========================================= */
+/* CUSTOMER REVIEWS */
 
 .reviews {
   background: var(--pale-pink);
@@ -1107,22 +993,19 @@ p {
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
   gap: 20px;
 }
 
 .review-card {
   display: flex;
   flex-direction: column;
-  min-height: 225px;
-  padding: 31px 30px;
+  min-width: 0;
+  padding: 31px 28px;
   border: 1px solid #ead4dd;
   border-radius: 13px;
   background: var(--paper);
   box-shadow: 0 5px 20px rgba(100, 36, 61, 0.06);
-}
-
-.review-placeholder {
-  border-style: dashed;
 }
 
 .review-mark {
@@ -1133,32 +1016,14 @@ p {
   line-height: 0.65;
 }
 
-.review-card h3 {
-  margin-bottom: 10px;
-  font-size: 25px;
-  line-height: 1.2;
-}
-
-.review-card p {
-  color: #8e7581;
-  font-size: 13px;
-}
-
-.review-placeholder small {
-  margin-top: auto;
-  padding-top: 18px;
-  color: #ae92a0;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.6px;
-}
-
 .review-card .customer-quote {
   margin-bottom: 25px;
   color: #5f2d43;
   font-family: var(--font-heading);
-  font-size: 20px;
-  line-height: 1.4;
+  font-size: 19px;
+  line-height: 1.45;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
 }
 
 .review-author {
@@ -1177,6 +1042,14 @@ p {
   font-size: 11px;
 }
 
+/* LONGER SECOND REVIEW */
+
+.review-card:nth-child(2) .customer-quote {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
 .reviews-bottom {
   display: flex;
   align-items: center;
@@ -1191,9 +1064,7 @@ p {
   font-size: 12px;
 }
 
-/* =========================================
-   FAQ
-   ========================================= */
+/* FAQ */
 
 .faq {
   background: white;
@@ -1257,9 +1128,7 @@ p {
   font-size: 13px;
 }
 
-/* =========================================
-   CONTACT
-   ========================================= */
+/* CONTACT SECTION */
 
 .contact {
   background: var(--maroon);
@@ -1320,6 +1189,7 @@ p {
 .contact-detail div {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .contact-detail small {
@@ -1337,6 +1207,12 @@ p {
   font-weight: 600;
   overflow-wrap: anywhere;
 }
+
+.contact-detail a:hover {
+  text-decoration: underline;
+}
+
+/* FORM */
 
 .contact-card {
   padding: 37px 40px 42px;
@@ -1433,9 +1309,7 @@ p {
   font-weight: 700;
 }
 
-/* =========================================
-   FOOTER
-   ========================================= */
+/* FOOTER */
 
 .footer {
   background: #321523;
@@ -1492,10 +1366,13 @@ p {
   color: white;
 }
 
+/* FOOTER CREDIT — SABR & SHAWQ */
+
 .footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 15px;
   padding-top: 23px;
   padding-bottom: 23px;
@@ -1504,13 +1381,39 @@ p {
   font-size: 11px;
 }
 
+.developer-credit {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.developer-credit a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #f0d2de;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.developer-credit a:hover {
+  color: white;
+}
+
+.developer-credit img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 .mobile-quote-button {
   display: none;
 }
 
-/* =========================================
-   SCROLL ANIMATIONS
-   ========================================= */
+/* SCROLL ANIMATIONS */
 
 .reveal {
   opacity: 0;
@@ -1525,9 +1428,7 @@ p {
   transform: translateY(0);
 }
 
-/* =========================================
-   TABLET RESPONSIVENESS
-   ========================================= */
+/* TABLET */
 
 @media (max-width: 1180px) {
   .desktop-nav {
@@ -1556,6 +1457,12 @@ p {
 
   .contact-grid {
     gap: 55px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .header-social {
+    display: none;
   }
 }
 
@@ -1641,7 +1548,6 @@ p {
   }
 
   .services-grid,
-  .gallery-grid,
   .reviews-grid {
     gap: 16px;
   }
@@ -1683,11 +1589,10 @@ p {
   }
 }
 
-/* =========================================
-   MOBILE RESPONSIVENESS
-   ========================================= */
+/* MOBILE */
 
 @media (max-width: 700px) {
+
   .container {
     width: calc(100% - 38px);
   }
@@ -1723,8 +1628,6 @@ p {
     font-size: 7px;
     letter-spacing: 1.75px;
   }
-
-  /* HERO */
 
   .hero {
     padding: 54px 0;
@@ -1798,8 +1701,6 @@ p {
     right: 10px;
   }
 
-  /* TRUST */
-
   .trust-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1832,8 +1733,6 @@ p {
     font-size: 9px;
   }
 
-  /* TYPOGRAPHY */
-
   .section-padding {
     padding: 75px 0;
   }
@@ -1855,8 +1754,6 @@ p {
   .intro p {
     font-size: 13px;
   }
-
-  /* SERVICES */
 
   .section-heading {
     display: block;
@@ -1886,8 +1783,6 @@ p {
     gap: 17px;
   }
 
-  /* ABOUT */
-
   .about-grid {
     display: flex;
     flex-direction: column;
@@ -1910,8 +1805,6 @@ p {
   .about-content p {
     font-size: 13px;
   }
-
-  /* PROCESS */
 
   .process-grid {
     display: flex;
@@ -1943,18 +1836,9 @@ p {
     font-size: 12px;
   }
 
-  /* RESULTS */
-
-  .gallery-grid,
   .reviews-grid {
     grid-template-columns: 1fr;
   }
-
-  .gallery-image {
-    height: 260px;
-  }
-
-  /* REVIEWS */
 
   .reviews-heading {
     margin-bottom: 30px;
@@ -1969,8 +1853,6 @@ p {
     align-items: flex-start;
   }
 
-  /* FAQ */
-
   .faq-grid {
     display: flex;
     flex-direction: column;
@@ -1980,8 +1862,6 @@ p {
   .faq-list summary {
     font-size: 13px;
   }
-
-  /* CONTACT */
 
   .contact-grid {
     display: flex;
@@ -2006,8 +1886,6 @@ p {
     gap: 12px;
   }
 
-  /* FOOTER */
-
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 38px 15px;
@@ -2023,8 +1901,6 @@ p {
     align-items: flex-start;
     padding-bottom: 100px;
   }
-
-  /* MOBILE STICKY QUOTE BUTTON */
 
   .mobile-quote-button {
     position: fixed;
@@ -2046,6 +1922,7 @@ p {
 }
 
 @media (max-width: 390px) {
+
   .form-row {
     grid-template-columns: 1fr;
     gap: 0;
@@ -2076,6 +1953,7 @@ p {
 /* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
