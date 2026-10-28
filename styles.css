@@ -1,15 +1,15 @@
 
 /* =========================================
-   E M CLEAN & CO — WEBSITE STYLING
-   Maroon, blush pink and warm ivory
+   E M CLEAN & CO
+   MAROON & PALE PINK WEBSITE
    ========================================= */
 
 :root {
   --maroon: #64243d;
   --maroon-dark: #4b1b30;
   --maroon-light: #915069;
-  --rose: #b35f7c;
   --dusty-rose: #c899a9;
+  --rose: #b35f7c;
   --pale-pink: #faedf1;
   --blush: #f9eef2;
   --cream: #fff8fa;
@@ -26,12 +26,19 @@
   --shadow: 0 24px 65px rgba(75, 27, 48, 0.11);
 }
 
-/* GENERAL */
+/* =========================================
+   GENERAL RESET
+   ========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
@@ -40,9 +47,9 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
   background: var(--paper);
   color: var(--ink);
+  font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -53,7 +60,9 @@ a {
   text-decoration: none;
 }
 
-button, input, textarea {
+button,
+input,
+textarea {
   font: inherit;
 }
 
@@ -83,7 +92,7 @@ img {
 
 .container {
   width: min(1180px, calc(100% - 88px));
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .section-padding {
@@ -99,7 +108,9 @@ img {
   text-transform: uppercase;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-heading);
   font-weight: 400;
 }
@@ -110,7 +121,8 @@ h2 {
   letter-spacing: -1.6px;
 }
 
-h1 em, h2 em {
+h1 em,
+h2 em {
   color: var(--rose);
   font-weight: 400;
 }
@@ -119,7 +131,9 @@ p {
   line-height: 1.85;
 }
 
-/* BUTTONS */
+/* =========================================
+   BUTTONS
+   ========================================= */
 
 .btn {
   display: inline-flex;
@@ -130,11 +144,13 @@ p {
   padding: 16px 23px;
   border: 1px solid transparent;
   border-radius: 9px;
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 800;
   line-height: 1.3;
   text-align: center;
   white-space: nowrap;
+
   transition:
     background 0.2s ease,
     transform 0.2s ease,
@@ -147,6 +163,7 @@ p {
 
 .btn span {
   font-size: 19px;
+  font-weight: 400;
 }
 
 .btn-primary {
@@ -196,7 +213,9 @@ p {
   transform: translateX(4px);
 }
 
-/* ANNOUNCEMENT BAR */
+/* =========================================
+   ANNOUNCEMENT BAR
+   ========================================= */
 
 .announcement {
   height: 35px;
@@ -214,7 +233,9 @@ p {
   height: 100%;
 }
 
-/* HEADER */
+/* =========================================
+   HEADER / NAVIGATION
+   ========================================= */
 
 .header {
   position: relative;
@@ -328,7 +349,7 @@ p {
   padding: 8px;
 }
 
-/* FACEBOOK AND INSTAGRAM ICONS */
+/* SOCIAL ICONS */
 
 .social-links {
   display: flex;
@@ -345,6 +366,7 @@ p {
   border-radius: 8px;
   background: #fff7fa;
   color: var(--maroon);
+
   transition:
     background 0.2s,
     color 0.2s,
@@ -363,11 +385,22 @@ p {
   font-weight: 800;
 }
 
+/* UPDATED INSTAGRAM SYMBOL */
+
 .instagram-symbol {
-  font-size: 27px;
-  font-weight: 700;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
   line-height: 1;
 }
+
+.instagram-contact-icon {
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* MOBILE MENU */
 
 .mobile-menu {
   position: absolute;
@@ -387,12 +420,15 @@ p {
   font-weight: 700;
 }
 
-/* HERO */
+/* =========================================
+   HERO SECTION
+   ========================================= */
 
 .hero {
   position: relative;
   overflow: hidden;
   padding: 80px 0 75px;
+
   background: linear-gradient(
     110deg,
     #fffcfb 22%,
@@ -480,7 +516,7 @@ p {
   font-size: 10px;
 }
 
-/* HERO PHOTOGRAPH */
+/* HERO IMAGE */
 
 .hero-visual {
   position: relative;
@@ -494,6 +530,7 @@ p {
   overflow: hidden;
   border-radius: 260px 260px 18px 18px;
   background: #ead0da;
+
   box-shadow: 0 32px 55px rgba(86, 34, 55, 0.13);
 }
 
@@ -507,15 +544,18 @@ p {
   z-index: 2;
   top: 53px;
   right: -29px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   width: 125px;
   height: 125px;
   border: 7px solid var(--cream);
   border-radius: 50%;
   background: #f7e0e9;
+
   box-shadow: 0 15px 32px rgba(50, 28, 39, 0.1);
   color: #79415a;
   text-align: center;
@@ -538,6 +578,7 @@ p {
   position: absolute;
   bottom: 47px;
   left: -25px;
+
   display: flex;
   align-items: center;
   gap: 14px;
@@ -583,7 +624,9 @@ p {
   letter-spacing: 2px;
 }
 
-/* TRUST STRIP */
+/* =========================================
+   TRUST STRIP
+   ========================================= */
 
 .trust-strip {
   background: white;
@@ -617,6 +660,7 @@ p {
   display: grid;
   place-items: center;
   flex-shrink: 0;
+
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -642,7 +686,9 @@ p {
   font-size: 10px;
 }
 
-/* INTRODUCTION */
+/* =========================================
+   INTRODUCTION
+   ========================================= */
 
 .intro {
   padding-top: 120px;
@@ -660,13 +706,15 @@ p {
 
 .intro p {
   max-width: 660px;
-  margin: 0 auto;
+  margin-inline: auto;
   color: var(--text);
   font-size: 15px;
   line-height: 1.95;
 }
 
-/* SERVICES */
+/* =========================================
+   SERVICES
+   ========================================= */
 
 .services {
   background: var(--blush);
@@ -707,6 +755,7 @@ p {
   border-radius: 15px;
   background: white;
   box-shadow: 0 2px 0 #f1e4e9;
+
   transition:
     transform 0.3s,
     box-shadow 0.3s;
@@ -771,7 +820,9 @@ p {
   font-size: 12px;
 }
 
-/* ABOUT ERIN */
+/* =========================================
+   ABOUT ERIN
+   ========================================= */
 
 .about {
   background: var(--paper);
@@ -807,10 +858,12 @@ p {
   position: absolute;
   bottom: 40px;
   left: 12px;
+
   display: flex;
   align-items: center;
   gap: 15px;
   padding: 18px 22px;
+
   border-radius: 12px;
   background: rgba(255, 247, 250, 0.94);
   color: #58243a;
@@ -833,10 +886,12 @@ p {
   position: absolute;
   top: 50px;
   right: -15px;
+
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 16px 24px;
+
   border-radius: 13px;
   background: #fceaf0;
   box-shadow: 0 14px 25px rgba(50, 28, 39, 0.1);
@@ -898,7 +953,9 @@ p {
   letter-spacing: 1.7px;
 }
 
-/* HOW IT WORKS */
+/* =========================================
+   HOW IT WORKS
+   ========================================= */
 
 .process {
   position: relative;
@@ -969,7 +1026,9 @@ p {
   text-align: center;
 }
 
-/* CUSTOMER REVIEWS */
+/* =========================================
+   CUSTOMER REVIEWS
+   ========================================= */
 
 .reviews {
   background: var(--pale-pink);
@@ -1064,7 +1123,9 @@ p {
   font-size: 12px;
 }
 
-/* FAQ */
+/* =========================================
+   FAQ
+   ========================================= */
 
 .faq {
   background: white;
@@ -1128,7 +1189,9 @@ p {
   font-size: 13px;
 }
 
-/* CONTACT SECTION */
+/* =========================================
+   CONTACT SECTION
+   ========================================= */
 
 .contact {
   background: var(--maroon);
@@ -1212,7 +1275,9 @@ p {
   text-decoration: underline;
 }
 
-/* FORM */
+/* =========================================
+   CONTACT FORM
+   ========================================= */
 
 .contact-card {
   padding: 37px 40px 42px;
@@ -1268,7 +1333,10 @@ p {
   color: #4e2a3c;
   font-size: 12px;
   outline: none;
-  transition: border 0.2s, box-shadow 0.2s;
+
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
 }
 
 .contact-card input {
@@ -1309,7 +1377,45 @@ p {
   font-weight: 700;
 }
 
-/* FOOTER */
+/* NEW DIRECT SUBMISSION STYLES */
+
+.form-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+}
+
+.form-status {
+  margin-top: 13px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.form-status.is-success {
+  background: #f5e7ee;
+  color: #64243d;
+  border: 1px solid #e4b9c9;
+}
+
+.form-status.is-error {
+  background: #fff0f2;
+  color: #922f4c;
+  border: 1px solid #e5b2bd;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+  transform: none;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
 
 .footer {
   background: #321523;
@@ -1366,7 +1472,9 @@ p {
   color: white;
 }
 
-/* FOOTER CREDIT — SABR & SHAWQ */
+/* =========================================
+   SABR & SHAWQ FOOTER CREDIT
+   ========================================= */
 
 .footer-bottom {
   display: flex;
@@ -1409,15 +1517,20 @@ p {
   border-radius: 5px;
 }
 
+/* MOBILE QUOTE BUTTON */
+
 .mobile-quote-button {
   display: none;
 }
 
-/* SCROLL ANIMATIONS */
+/* =========================================
+   SCROLL ANIMATIONS
+   ========================================= */
 
 .reveal {
   opacity: 0;
   transform: translateY(20px);
+
   transition:
     opacity 0.55s ease,
     transform 0.55s ease;
@@ -1428,9 +1541,12 @@ p {
   transform: translateY(0);
 }
 
-/* TABLET */
+/* =========================================
+   SMALLER DESKTOPS
+   ========================================= */
 
 @media (max-width: 1180px) {
+
   .desktop-nav {
     gap: 15px;
   }
@@ -1466,7 +1582,12 @@ p {
   }
 }
 
+/* =========================================
+   TABLET
+   ========================================= */
+
 @media (max-width: 960px) {
+
   .container {
     width: calc(100% - 54px);
   }
@@ -1589,7 +1710,9 @@ p {
   }
 }
 
-/* MOBILE */
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 700px) {
 
@@ -1628,6 +1751,8 @@ p {
     font-size: 7px;
     letter-spacing: 1.75px;
   }
+
+  /* HERO */
 
   .hero {
     padding: 54px 0;
@@ -1701,6 +1826,8 @@ p {
     right: 10px;
   }
 
+  /* TRUST */
+
   .trust-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1733,6 +1860,8 @@ p {
     font-size: 9px;
   }
 
+  /* TYPOGRAPHY */
+
   .section-padding {
     padding: 75px 0;
   }
@@ -1754,6 +1883,8 @@ p {
   .intro p {
     font-size: 13px;
   }
+
+  /* SERVICES */
 
   .section-heading {
     display: block;
@@ -1783,6 +1914,8 @@ p {
     gap: 17px;
   }
 
+  /* ABOUT */
+
   .about-grid {
     display: flex;
     flex-direction: column;
@@ -1805,6 +1938,8 @@ p {
   .about-content p {
     font-size: 13px;
   }
+
+  /* HOW IT WORKS */
 
   .process-grid {
     display: flex;
@@ -1836,6 +1971,8 @@ p {
     font-size: 12px;
   }
 
+  /* REVIEWS */
+
   .reviews-grid {
     grid-template-columns: 1fr;
   }
@@ -1853,6 +1990,8 @@ p {
     align-items: flex-start;
   }
 
+  /* FAQ */
+
   .faq-grid {
     display: flex;
     flex-direction: column;
@@ -1862,6 +2001,8 @@ p {
   .faq-list summary {
     font-size: 13px;
   }
+
+  /* CONTACT */
 
   .contact-grid {
     display: flex;
@@ -1886,6 +2027,8 @@ p {
     gap: 12px;
   }
 
+  /* FOOTER */
+
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 38px 15px;
@@ -1902,24 +2045,33 @@ p {
     padding-bottom: 100px;
   }
 
+  /* STICKY MOBILE BUTTON */
+
   .mobile-quote-button {
     position: fixed;
     z-index: 99;
     bottom: 12px;
     left: 14px;
     right: 14px;
+
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 49px;
+
     border-radius: 9px;
     background: var(--maroon);
     color: white;
     font-size: 12px;
     font-weight: 800;
+
     box-shadow: 0 10px 30px rgba(50, 21, 35, 0.33);
   }
 }
+
+/* =========================================
+   VERY SMALL PHONES
+   ========================================= */
 
 @media (max-width: 390px) {
 
@@ -1950,7 +2102,9 @@ p {
   }
 }
 
-/* ACCESSIBILITY */
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
