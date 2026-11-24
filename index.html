@@ -1,2410 +1,944 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#050608">
-  <meta name="sabr-build" content="3.2">
-  <meta name="description" content="Sabr & Shawq — independent UK web design studio. Bespoke websites, thoughtful redesigns, branding, hosting and ongoing care.">
-  <meta property="og:title" content="Sabr & Shawq | Uniquely unrivalled.">
-  <meta property="og:description" content="Distinctive design. Meticulous development. A digital presence entirely your own.">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/png" href="sabr-emblem.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#64243d">
+  <meta name="description" content="E M Clean & Co provides professional home cleaning in Kettering and surrounding areas. 8 years' experience, fully insured, DBS checked and free home visit quotations.">
+
+  <title>E M Clean & Co | Home Cleaning in Kettering</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Manrope:wght@400;500;600;700&family=Italianno&display=swap" rel="stylesheet">
-  <!-- Styles are embedded below: no external CSS file is needed. -->
-  <style id="sabr-styles">
-/* SABR & SHAWQ — Midnight Signature. Edit the palette here. */
-:root {
-  color-scheme: dark;
-  --black: #050608;
-  --ink: #080d16;
-  --navy: #0a1224;
-  --blue: #142b4d;
-  --steel: #71869d;
-  --gold: #c4af90;
-  --pearl: #f2f0eb;
-  --muted: #b0b9c5;
-  --line: #293443;
-  --display: 'Bodoni Moda',Didot,'Times New Roman',serif;
-  --body: Manrope,Arial,sans-serif;
-  --max: 1250px;
-  --ease: cubic-bezier(.2,.75,.2,1);
-}
-*,*::before,*::after {
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
-}
-body {
-  margin: 0;
-  background: var(--black);
-  color: var(--pearl);
-  font-family: var(--body);
-  font-size: 15px;
-  line-height: 1.75;
-  overflow-x: hidden;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-button,input,select,textarea {
-  font: inherit;
-}
-button {
-  cursor: pointer;
-}
-button:disabled {
-  cursor: not-allowed;
-  opacity: .48;
-}
-img,svg {
-  max-width: 100%;
-  display: block;
-}
-img {
-  height: auto;
-}
-h1,h2,h3,p {
-  margin: 0;
-}
-h1,h2,h3 {
-  font-family: var(--display);
-  font-weight: 400;
-  line-height: 1.09;
-}
-h1 {
-  font-size: clamp(48px,7.2vw,108px);
-}
-h2 {
-  font-size: clamp(37px,5vw,68px);
-}
-h3 {
-  font-size: clamp(25px,3vw,36px);
-}
-h1 em,h2 em {
-  font-weight: 400;
-  color: #a0b2ca;
-}
-p+ p {
-  margin-top: 1em;
-}
-::selection {
-  background: var(--gold);
-  color: var(--black);
-}
-:focus-visible {
-  outline: 2px solid #ecd1a6;
-  outline-offset: 5px;
-}
-[hidden] {
-  display: none!important;
-}
-.skip {
-  position: fixed;
-  left: 10px;
-  top: -100px;
-  background: var(--gold);
-  color: var(--black);
-  padding: 12px;
-  z-index: 100;
-}
-.skip:focus {
-  top: 10px;
-}
-.shell {
-  width: min(var(--max),calc(100% - 100px));
-  margin-inline: auto;
-}
-.section {
-  padding-block: 100px;
-}
-.section-tinted {
-  background: linear-gradient(135deg,#0a101a,#080b10 65%);
-  border-block: 1px solid #17202c;
-}
-.eyebrow {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .26em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
-  line-height: 1.7;
-}
-.lead {
-  color: var(--muted);
-  max-width: 680px;
-  margin-top: 22px;
-  line-height: 1.9;
-}
-.section-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 32px;
-  margin-bottom: 40px;
-}
-.section-top .text-link,.section-top .btn {
-  flex: none;
-}
-.text-link {
-  color: var(--gold);
-  font-size: 12px;
-  letter-spacing: .08em;
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  border-bottom: 1px solid #6c6254;
-  padding-bottom: 5px;
-  transition: color .25s,border-color .25s;
-}
-.text-link:hover {
-  color: var(--pearl);
-  border-color: var(--pearl);
-}
-.text-link span {
-  transition: transform .25s;
-}
-.text-link:hover span {
-  transform: translate(3px,-3px);
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 17px;
-  min-height: 52px;
-  padding: 14px 25px;
-  border: 1px solid #97836b;
-  border-radius: 3px;
-  color: var(--pearl);
-  background: rgba(5,6,8,.28);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  line-height: 1.5;
-  transition: background .25s,color .25s,transform .25s,border-color .25s;
-  text-align: center;
-}
-.btn:hover {
-  background: #c4af9017;
-  border-color: var(--gold);
-  transform: translateY(-2px);
-}
-.btn-gold {
-  background: linear-gradient(115deg,#e8d7bc,#c4af90 53%,#aa9275);
-  color: #10131a;
-  border-color: #d0b99c;
-}
-.btn-gold:hover {
-  background: #ead8bc;
-  color: #10131a;
-}
-.btn-small {
-  min-height: 40px;
-  padding: 9px 16px;
-  border-radius: 30px;
-  font-size: 9px;
-  white-space: nowrap;
-}
-.actions {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.site-header {
-  position: fixed;
-  inset: 0 0 auto;
-  z-index: 30;
-  min-height: 75px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 13px 4.2%;
-  background: linear-gradient(#050608f5,#050608ad);
-  border-bottom: 1px solid #c4af9030;
-  transition: all .45s var(--ease);
-}
-.site-header.scrolled {
-  inset: 12px 3% auto;
-  border: 1px solid #c4af9040;
-  border-radius: 45px;
-  min-height: 60px;
-  padding: 7px 2.1%;
-  background: #080e18e8;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 12px 36px #0005;
-}
-.emblem-link {
-  flex: none;
-  display: block;
-  width: 92px;
-}
-.emblem-link img {
-  width: 100%;
-  height: 43px;
-  object-fit: contain;
-}
-.site-header nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(12px,2vw,29px);
-}
-.site-header nav a {
-  position: relative;
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: .13em;
-  font-size: 9px;
-  font-weight: 700;
-  color: #d7d3cb;
-  padding: 11px 0;
-  white-space: nowrap;
-}
-.site-header nav a::after {
-  content: "";
-  position: absolute;
-  bottom: 4px;
-  left: 50%;
-  width: 0;
-  height: 1px;
-  background: var(--gold);
-  transition: width .3s,left .3s;
-}
-.site-header nav a:hover::after,.site-header nav a.active::after {
-  width: 100%;
-  left: 0;
-}
-.site-header nav a.active {
-  color: var(--gold);
-}
-.menu-toggle {
-  display: none;
-  background: none;
-  border: 0;
-  width: 45px;
-  height: 42px;
-  padding: 10px;
-}
-.menu-toggle span {
-  height: 1px;
-  background: var(--gold);
-  display: block;
-  width: 24px;
-  margin: 6px auto;
-  transition: transform .3s;
-}
-.menu-toggle[aria-expanded=true] span:first-child {
-  transform: translateY(3.5px) rotate(45deg);
-}
-.menu-toggle[aria-expanded=true] span:last-child {
-  transform: translateY(-3.5px) rotate(-45deg);
-}
-.hero {
-  min-height: max(760px,100svh);
-  position: relative;
-  isolation: isolate;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  overflow: hidden;
-  padding: 145px 25px 180px;
-}
-.landscape {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  overflow: hidden;
-  pointer-events: none;
-}
-.landscape svg,.art-panel svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-}
-.hero .landscape svg {
-  position: absolute;
-  inset: 0;
-}
-.hero-shade {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(ellipse at 50% 42%,#05060845 0%,transparent 70%),linear-gradient(0deg,#050608 0%,transparent 16%,transparent 85%,#05060830 100%);
-}
-.hero-content {
-  position: relative;
-  width: min(1200px,100%);
-  z-index: 1;
-  animation: enter .9s var(--ease) both;
-}
-.wordmark {
-  font-family: var(--display);
-  font-optical-sizing: auto;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: .105em;
-  line-height: 1.1;
-  font-size: clamp(42px,8.65vw,132px);
-  white-space: nowrap;
-  color: var(--gold);
-  background: linear-gradient(155deg,#f6eadd 13%,#d6c0a0 52%,#9f876b 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding: .06em .04em .14em .13em;
-  filter: drop-shadow(0 6px 20px #0006);
-}
-.wordmark span {
-  font-style: italic;
-  font-size: .88em;
-  letter-spacing: 0;
-}
-.ornament {
-  margin: 13px auto 33px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: center;
-  color: var(--gold);
-}
-.ornament i {
-  display: block;
-  height: 1px;
-  width: min(12vw,135px);
-  background: linear-gradient(90deg,transparent,var(--gold));
-}
-.ornament i:last-child {
-  transform: rotate(180deg);
-}
-.ornament svg {
-  width: 22px;
-  height: 22px;
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: .8;
-}
-.hero-label {
-  letter-spacing: .36em;
-  margin-bottom: 20px;
-}
-.hero h1 {
-  font-size: clamp(40px,5.65vw,82px);
-  color: var(--pearl);
-  margin-bottom: 18px;
-  letter-spacing: -.045em;
-}
-.hero h1 em {
-  color: #9db1cd;
-}
-.hero-copy {
-  font-size: clamp(13px,1.5vw,17px);
-  color: #d3d7df;
-  max-width: 780px;
-  margin: 0 auto 34px;
-}
-.mobile-break {
-  display: none;
-}
-.hero-verse {
-  position: absolute;
-  bottom: 64px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: max-content;
-  max-width: 90%;
-  color: #e3cfb2;
-}
-.hero-verse p,.verse p {
-  font-family: var(--display);
-  font-size: 22px;
-  font-style: italic;
-  line-height: 1.3;
-}
-.hero-verse span,.verse span {
-  display: block;
-  letter-spacing: .35em;
-  font-size: 10px;
-  margin-top: 7px;
-  color: var(--gold);
-}
-.scroll-cue {
-  position: absolute;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 28px;
-  width: 18px;
-  display: grid;
-  place-items: center;
-}
-.scroll-cue span {
-  height: 24px;
-  width: 1px;
-  background: linear-gradient(transparent,var(--gold));
-  animation: pulse 2.8s ease infinite;
-}
-.hero-index {
-  position: absolute;
-  left: 4.2%;
-  bottom: 34px;
-  font-size: 8px;
-  letter-spacing: .2em;
-  color: #a1a8b5;
-}
-.art-panel {
-  position: relative;
-  overflow: hidden;
-  min-height: 350px;
-  border: 1px solid var(--line);
-  border-radius: 3px;
-}
-.art-panel svg {
-  position: absolute;
-  inset: 0;
-}
-.split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(35px,8vw,115px);
-  align-items: center;
-}
-.split .text-link {
-  margin-top: 25px;
-}
-.subhero {
-  position: relative;
-  isolation: isolate;
-  min-height: 390px;
-  display: grid;
-  align-items: end;
-  overflow: hidden;
-  padding: 135px 0 65px;
-  border-bottom: 1px solid var(--line);
-}
-.subhero .landscape {
-  opacity: .7;
-}
-.subhero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg,#050608ed,#05060850 70%),linear-gradient(0deg,#050608,transparent 65%);
-  z-index: -1;
-}
-.subhero h1 {
-  font-size: clamp(48px,7vw,96px);
-  letter-spacing: -.04em;
-}
-.subhero .lead {
-  margin-top: 17px;
-  max-width: 620px;
-}
-.subhero .eyebrow {
-  margin-bottom: 9px;
-}
-.route-enter {
-  animation: enter .45s var(--ease) both;
-}
-@keyframes enter {
-  from {
-    opacity: 0;
-    transform: translateY(13px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes pulse {
-  50% {
-    opacity: .35;
-    transform: translateY(4px);
-  }
-}
-@keyframes twinkle {
-  50% {
-    opacity: .45;
-  }
-}
-.art-stars {
-  animation: twinkle 9s ease-in-out infinite;
-}
-.reveal {
-  opacity: 1;
-  transform: none;
-}
-.reveal.pending {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity .7s var(--ease),transform .7s var(--ease);
-}
-.reveal.pending.visible {
-  opacity: 1;
-  transform: none;
-}
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 26px;
-}
-.project-card {
-  min-width: 0;
-  border: 1px solid var(--line);
-  background: #090e16;
-  overflow: hidden;
-  transition: border-color .3s,transform .3s;
-}
-.project-card:hover {
-  border-color: #84735d;
-  transform: translateY(-3px);
-}
-.project-card.flagship {
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: 1.45fr 1fr;
-}
-.project-card .project-body {
-  padding: 27px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 13px;
-}
-.project-body .eyebrow {
-  margin: 0;
-  font-size: 9px;
-}
-.project-body h3 {
-  margin: 0;
-}
-.project-body p {
-  color: var(--muted);
-  font-size: 13px;
-}
-.project-body .text-link {
-  margin-top: 3px;
-}
-.project-visual {
-  position: relative;
-  min-height: 235px;
-  aspect-ratio: 16/9;
-  background: #111b29;
-  overflow: hidden;
-  display: block;
-}
-.project-card.flagship .project-visual {
-  height: 100%;
-  min-height: 330px;
-  aspect-ratio: auto;
-}
-.project-visual img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  transition: transform .7s var(--ease);
-}
-.project-visual:hover img {
-  transform: scale(1.035);
-}
-.project-placeholder {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 20px;
-  overflow: hidden;
-  background: linear-gradient(155deg,#0e1724,#070a10);
-}
-.project-placeholder svg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  inset: 0;
-  opacity: .5;
-}
-.project-placeholder .placeholder-label {
-  position: relative;
-  max-width: 85%;
-}
-.placeholder-label strong {
-  font-family: var(--display);
-  font-size: clamp(24px,3.4vw,43px);
-  font-weight: 400;
-  line-height: 1.1;
-  display: block;
-}
-.placeholder-label small {
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: .18em;
-  color: var(--gold);
-  font-size: 9px;
-  margin-top: 13px;
-}
-.mini-review {
-  border-top: 1px solid var(--line);
-  padding-top: 14px;
-  width: 100%;
-  margin-top: 6px;
-  font-size: 12px;
-  color: var(--muted);
-}
-.mini-review p {
-  font-family: var(--display);
-  font-size: 17px;
-  line-height: 1.5;
-  color: #d8d2ca;
-}
-.mini-review small {
-  display: block;
-  margin-top: 6px;
-  color: var(--gold);
-  font-size: 10px;
-}
-.draft-tag {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-  color: #c5b49a;
-  border: 1px solid #5f5345;
-  padding: 4px 9px;
-  line-height: 1.5;
-}
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-}
-.service-card {
-  padding: 32px;
-  background: #080d15;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  min-height: 220px;
-}
-.service-card .number,.number {
-  color: var(--gold);
-  font-size: 11px;
-  letter-spacing: .18em;
-}
-.service-card p,.process-card p {
-  color: var(--muted);
-  font-size: 13px;
-}
-.service-card h3 {
-  font-size: 30px;
-}
-.service-card .service-icon {
-  width: 35px;
-  height: 35px;
-  stroke: var(--gold);
-  fill: none;
-  stroke-width: 1.2;
-}
-.service-card a {
-  margin-top: auto;
-  align-self: flex-start;
-}
-.recognition {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 65px;
-  align-items: center;
-}
-.recognition blockquote {
-  margin: 0;
-  border-left: 1px solid var(--gold);
-  padding: 8px 0 8px 30px;
-  font: 400 clamp(25px,3vw,38px)/1.35 var(--display);
-  color: #e5ded3;
-}
-.recognition cite {
-  font: 11px/1.7 var(--body);
-  color: var(--gold);
-  display: block;
-  margin-top: 20px;
-  font-style: normal;
-}
-.price-summary {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  border: 1px solid var(--line);
-}
-.price-summary>div {
-  padding: 28px;
-  border-right: 1px solid var(--line);
-}
-.price-summary>div:last-child {
-  border: 0;
-}
-.price-summary strong {
-  display: block;
-  font: 400 42px/1.3 var(--display);
-  color: var(--gold);
-}
-.price-summary small {
-  color: var(--muted);
-}
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-}
-.process-card {
-  background: #080d15;
-  padding: 29px;
-  min-height: 180px;
-}
-.process-card h3 {
-  margin: 11px 0 9px;
-  font-size: 29px;
-}
-.closing {
-  position: relative;
-  isolation: isolate;
-  text-align: center;
-  overflow: hidden;
-  padding: 100px 25px 110px;
-  border-top: 1px solid var(--line);
-}
-.closing .landscape {
-  opacity: .65;
-}
-.closing::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(#050608,transparent 50%,#050608);
-}
-.closing h2 {
-  max-width: 850px;
-  margin: auto;
-}
-.closing .lead {
-  margin: 16px auto 30px;
-}
-.footer {
-  border-top: 1px solid #c4af9030;
-  padding: 52px max(5%,calc((100% - var(--max))/2)) 20px;
-  background: #050608;
-}
-.footer-main {
-  display: grid;
-  grid-template-columns: 1fr 1.6fr 1fr;
-  align-items: center;
-  gap: 25px;
-}
-.footer-brand {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-}
-.footer-brand img {
-  width: 80px;
-  height: 42px;
-  object-fit: contain;
-}
-.footer-brand .wordmark {
-  font-size: clamp(20px,3vw,41px);
-  letter-spacing: .12em;
-}
-.footer-side {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 11px;
-}
-.footer-side:last-child {
-  align-items: flex-end;
-  text-align: right;
-}
-.footer-side .eyebrow {
-  margin: 0 0 5px;
-}
-.footer-side a {
-  font-size: 12px;
-  display: flex;
-  gap: 9px;
-  align-items: center;
-  color: var(--muted);
-}
-.footer-side a:hover {
-  color: var(--gold);
-}
-.footer-side svg {
-  width: 16px;
-  height: 16px;
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 1.5;
-}
-.footer-brand .verse p {
-  font-size: 17px;
-}
-.footer-brand .verse span {
-  font-size: 9px;
-}
-.footer-bottom {
-  margin-top: 35px;
-  padding-top: 17px;
-  border-top: 1px solid #25303d;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  color: #9aa4b3;
-  font-size: 11px;
-  flex-wrap: wrap;
-}
-.footer-bottom nav {
-  display: flex;
-  gap: 19px;
-  flex-wrap: wrap;
-}
-.footer-bottom a:hover {
-  color: var(--gold);
-}
-/* Project case studies and genuine screenshot slots */
-.back-link {
-  display: inline-flex;
-  margin-bottom: 24px;
-  color: var(--gold);
-  font-size: 12px;
-  gap: 8px;
-}
-.case-intro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 45px;
-}
-.case-intro .lead {
-  margin-top: 0;
-}
-.case-meta {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 18px;
-  border-top: 1px solid var(--line);
-  padding-top: 19px;
-}
-.case-meta small {
-  display: block;
-  color: var(--gold);
-  font-size: 10px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-}
-.case-meta strong {
-  font-weight: 500;
-  font-size: 13px;
-}
-.preview-panel {
-  border: 1px solid var(--line);
-  background: #080e17;
-  padding: 25px;
-  overflow: hidden;
-}
-.preview-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-.device-tabs {
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-}
-.device-tabs button {
-  border: 1px solid var(--line);
-  background: #0a1220;
-  color: var(--muted);
-  padding: 8px 15px;
-  font-size: 11px;
-  border-radius: 2px;
-}
-.device-tabs button[aria-pressed=true] {
-  border-color: var(--gold);
-  color: var(--gold);
-  background: #1a2331;
-}
-.preview-stage {
-  background: #05080e;
-  min-height: 300px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 15px;
-  overflow: auto;
-}
-.device-frame {
-  width: 100%;
-  max-width: 100%;
-  border: 1px solid #556479;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #0b1421;
-  transition: width .4s var(--ease);
-  box-shadow: 0 18px 42px #0005;
-}
-.device-frame[data-device=tablet] {
-  width: 768px;
-}
-.device-frame[data-device=mobile] {
-  width: 390px;
-}
-.frame-top {
-  display: flex;
-  gap: 5px;
-  padding: 10px 12px;
-  border-bottom: 1px solid #344052;
-}
-.frame-top i {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #68717c;
-}
-.frame-content {
-  position: relative;
-  min-height: 280px;
-  display: grid;
-  place-items: center;
-}
-.frame-content img {
-  display: block;
-  width: 100%;
-  height: auto;
-  cursor: zoom-in;
-}
-.frame-content iframe {
-  display: block;
-  width: 100%;
-  height: 610px;
-  border: 0;
-  background: white;
-}
-.frame-content[data-device=mobile] iframe {
-  height: 710px;
-}
-.frame-message {
-  text-align: center;
-  padding: 40px 15px;
-  display: grid;
-  justify-items: center;
-  gap: 12px;
-}
-.frame-message p {
-  color: var(--muted);
-  max-width: 450px;
-  font-size: 13px;
-}
-.frame-message h3 {
-  font-size: 28px;
-}
-.preview-note,.fine-print {
-  font-size: 12px;
-  color: #a0a9b7;
-  margin-top: 15px;
-}
-.case-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 45px;
-  margin-top: 50px;
-}
-.case-columns h3 {
-  margin-bottom: 15px;
-}
-.case-columns p,.case-columns li {
-  color: var(--muted);
-  font-size: 14px;
-}
-.case-columns ul {
-  padding-left: 20px;
-}
-.case-columns li {
-  margin-bottom: 9px;
-}
-.case-review {
-  margin-top: 42px;
-}
-.image-dialog {
-  padding: 15px;
-  background: #080d16;
-  color: var(--pearl);
-  border: 1px solid var(--line);
-  max-width: 95vw;
-  max-height: 95vh;
-  overflow: auto;
-}
-.image-dialog::backdrop {
-  background: #000e;
-}
-.image-dialog img {
-  max-width: 88vw;
-  max-height: 80vh;
-  object-fit: contain;
-  margin: auto;
-}
-.image-dialog p {
-  font-size: 12px;
-  text-align: center;
-  margin-top: 9px;
-}
-.dialog-close {
-  position: sticky;
-  top: 0;
-  margin-left: auto;
-  display: block;
-  border: 1px solid var(--line);
-  background: #080d16;
-  color: var(--gold);
-  font-size: 24px;
-  width: 36px;
-  height: 36px;
-  line-height: 1;
-}
-/* Studio, reviews and FAQ */
-.philosophy-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  margin-bottom: 55px;
-}
-.philosophy-grid>article {
-  background: #080d15;
-  padding: 42px;
-}
-.philosophy-grid .arabic {
-  color: var(--gold);
-  font-size: 37px;
-  line-height: 1.3;
-  margin-bottom: 15px;
-}
-.philosophy-grid p {
-  color: var(--muted);
-  margin-top: 12px;
-}
-.founder-letter {
-  max-width: 850px;
-  margin: auto;
-  padding: clamp(25px,6vw,70px);
-  border: 1px solid #514737;
-  background: linear-gradient(145deg,#0d1521,#080a0f);
-  position: relative;
-}
-.founder-letter::before {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border: 1px solid #c4af901c;
-  pointer-events: none;
-}
-.founder-letter h2 {
-  margin-bottom: 25px;
-}
-.founder-letter .byline {
-  color: var(--gold);
-  font-weight: 600;
-  margin-bottom: 25px;
-}
-.founder-letter p {
-  color: #cbd0d7;
-  margin: 0 0 18px;
-}
-.founder-letter strong {
-  color: #f0e5d4;
-}
-.signature {
-  font-family: Italianno,'Brush Script MT',cursive;
-  font-size: 60px;
-  line-height: 1.1;
-  color: var(--gold);
-  margin: 30px 0 6px;
-  font-weight: 400;
-}
-.signature-label {
-  font-size: 10px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.founder-letter .verse {
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid var(--line);
-}
-.founder-letter .verse p {
-  margin: 0;
-  color: var(--gold);
-}
-.reviews-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-}
-.review-card {
-  padding: 35px;
-  background: #0a101a;
-  border: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 15px;
-}
-.review-card.feature {
-  grid-column: 1/-1;
-  padding: clamp(25px,5vw,60px);
-}
-.review-card .quote-mark {
-  font-family: var(--display);
-  font-size: 70px;
-  line-height: .7;
-  color: var(--gold);
-  margin-top: 15px;
-}
-.review-card blockquote {
-  margin: 0;
-  font-family: var(--display);
-  font-size: clamp(23px,3vw,32px);
-  line-height: 1.45;
-  color: #e7ded3;
-}
-.review-card .transcript {
-  font-family: var(--body);
-  font-size: 15px;
-  line-height: 1.9;
-  color: #c4ccd7;
-  white-space: pre-wrap;
-}
-.review-card .review-footer {
-  font-size: 12px;
-  color: var(--gold);
-  margin-top: auto;
-}
-.review-card h3 {
-  font-size: 31px;
-}
-.faq-list {
-  max-width: 900px;
-  margin: auto;
-}
-.faq-list details {
-  border-bottom: 1px solid var(--line);
-  padding: 0 7px;
-}
-.faq-list details:first-child {
-  border-top: 1px solid var(--line);
-}
-.faq-list summary {
-  cursor: pointer;
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  font: 400 clamp(23px,3vw,31px)/1.4 var(--display);
-  padding: 24px 0;
-  color: var(--pearl);
-}
-.faq-list summary::-webkit-details-marker {
-  display: none;
-}
-.faq-list summary::after {
-  content: '+';
-  font: 400 23px/1 var(--body);
-  color: var(--gold);
-  flex: none;
-}
-.faq-list details[open] summary::after {
-  content: '−';
-}
-.faq-list details p {
-  color: var(--muted);
-  padding-bottom: 23px;
-  max-width: 760px;
-}
-.legal {
-  max-width: 800px;
-}
-.legal h2 {
-  font-size: 34px;
-  margin: 30px 0 12px;
-}
-.legal p {
-  color: var(--muted);
-}
-/* Pricing and project enquiry */
-.package-layout {
-  display: grid;
-  grid-template-columns: 1.35fr .75fr;
-  gap: 35px;
-  align-items: start;
-}
-.package-options {
-  display: grid;
-  gap: 13px;
-}
-.package-options h2 {
-  font-size: 35px;
-  margin: 12px 0 4px;
-}
-.option {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 17px;
-  border: 1px solid var(--line);
-  padding: 20px;
-  background: #090e17;
-  cursor: pointer;
-  transition: border-color .2s,background .2s;
-}
-.option:has(input:checked) {
-  border-color: var(--gold);
-  background: #111c2d;
-}
-.option:hover {
-  border-color: #83735e;
-}
-.option input {
-  accent-color: var(--gold);
-  width: 17px;
-  height: 17px;
-  flex: none;
-  margin: 0;
-}
-.option .option-text {
-  flex: 1;
-}
-.option .option-text strong {
-  display: block;
-  font-size: 15px;
-  font-weight: 600;
-}
-.option .option-text small {
-  color: var(--muted);
-  font-size: 12px;
-  display: block;
-  line-height: 1.5;
-  margin-top: 4px;
-}
-.option .amount {
-  font-family: var(--display);
-  font-size: 30px;
-  color: var(--gold);
-  white-space: nowrap;
-}
-.option .amount small {
-  font-family: var(--body);
-  font-size: 10px;
-}
-.estimate {
-  position: sticky;
-  top: 100px;
-  padding: 30px;
-  background: linear-gradient(145deg,#111c2c,#090d15);
-  border: 1px solid #5e5346;
-}
-.estimate h3 {
-  font-size: 36px;
-  margin-bottom: 22px;
-}
-.estimate-line {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  border-bottom: 1px solid var(--line);
-  padding: 15px 0;
-  align-items: center;
-}
-.estimate-line span {
-  color: var(--muted);
-  font-size: 12px;
-}
-.estimate-line strong {
-  font: 400 36px/1 var(--display);
-  color: var(--gold);
-  text-align: right;
-}
-.estimate .btn {
-  width: 100%;
-  margin-top: 22px;
-}
-.estimate .fine-print {
-  font-size: 11px;
-}
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-}
-.contact-card {
-  background: #0a101a;
-  border: 1px solid var(--line);
-  padding: 35px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
-}
-.contact-card a:not(.btn) {
-  overflow-wrap: anywhere;
-  color: var(--gold);
-}
-.contact-card p {
-  color: var(--muted);
-}
-.contact-card .btn {
-  margin-top: 8px;
-}
-.form-wrap {
-  max-width: 900px;
-  margin: auto;
-  border: 1px solid #3f4145;
-  background: linear-gradient(150deg,#0c1421,#080c13);
-  padding: clamp(23px,5vw,52px);
-}
-.form-heading {
-  text-align: center;
-  margin-bottom: 35px;
-}
-.form-heading h2 {
-  font-size: clamp(34px,5vw,55px);
-}
-.form-heading p {
-  color: var(--muted);
-  margin-top: 10px;
-}
-.steps {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 10px;
-  margin-bottom: 35px;
-}
-.steps div {
-  border-top: 2px solid var(--line);
-  padding-top: 9px;
-  color: #939dad;
-  font-size: 10px;
-  line-height: 1.5;
-}
-.steps div.current,.steps div.complete {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-.form-step h3 {
-  font-size: 35px;
-  margin-bottom: 22px;
-}
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 19px;
-}
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 0;
-}
-.field.full {
-  grid-column: 1/-1;
-}
-.field>span,.field>label,fieldset legend {
-  font-size: 12px;
-  font-weight: 600;
-  color: #e3dfd9;
-}
-.field input,.field select,.field textarea {
-  width: 100%;
-  min-height: 47px;
-  background: #050a12;
-  border: 1px solid #394555;
-  color: var(--pearl);
-  padding: 11px 12px;
-  border-radius: 2px;
-  outline-offset: 2px;
-}
-.field textarea {
-  min-height: 100px;
-  resize: vertical;
-}
-.field input::placeholder,.field textarea::placeholder {
-  color: #8390a1;
-}
-.field input:focus,.field select:focus,.field textarea:focus {
-  border-color: var(--gold);
-}
-.field small {
-  font-size: 11px;
-  color: var(--muted);
-}
-fieldset {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  min-width: 0;
-}
-fieldset legend {
-  padding: 0;
-  margin-bottom: 12px;
-}
-.checks {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-.check {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 11px;
-  background: #0a111c;
-  border: 1px solid var(--line);
-  font-size: 12px;
-  cursor: pointer;
-}
-.check input {
-  accent-color: var(--gold);
-  width: 16px;
-  height: 16px;
-  flex: none;
-  margin: 0;
-}
-.form-actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-}
-.form-actions .right {
-  margin-left: auto;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.form-error {
-  color: #f0bba8;
-  font-size: 12px;
-  min-height: 1.5em;
-  margin-top: 12px;
-}
-.review-enquiry {
-  padding: 18px;
-  border: 1px solid var(--line);
-  background: #080d15;
-  margin-top: 24px;
-  font-size: 12px;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  max-height: 300px;
-  overflow: auto;
-}
-.toast {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 60;
-  background: #111c2c;
-  border: 1px solid var(--gold);
-  color: var(--pearl);
-  padding: 12px 19px;
-  max-width: min(90vw,420px);
-  font-size: 13px;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: opacity .2s,transform .2s;
-}
-.toast.show {
-  opacity: 1;
-  transform: none;
-}
-@media(max-width:1100px) {
-  .site-header {
-    gap: 14px;
-    padding-inline: 3%;
-  }
-  .site-header nav {
-    gap: 15px;
-  }
-  .site-header nav a {
-    letter-spacing: .08em;
-    font-size: 9px;
-  }
-  .emblem-link {
-    width: 70px;
-  }
-  .nav-cta {
-    padding-inline: 12px;
-  }
-  .shell {
-    width: calc(100% - 72px);
-  }
-}
-@media(max-width:850px) {
-  .site-header,.site-header.scrolled {
-    padding: 10px 22px;
-    min-height: 65px;
-  }
-  .site-header.scrolled {
-    inset: 8px 12px auto;
-  }
-  .menu-toggle {
-    display: block;
-    z-index: 2;
-  }
-  .nav-cta {
-    margin-left: auto;
-  }
-  .site-header nav {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    position: fixed;
-    inset: 0;
-    height: 100dvh;
-    background: #070c15;
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-    padding: 85px 20px 30px;
-    overflow: auto;
-    transition: opacity .25s,visibility .25s;
-  }
-  .site-header.menu-open nav {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .site-header nav a {
-    font-family: var(--display);
-    font-size: 29px;
-    text-transform: none;
-    letter-spacing: .01em;
-    font-weight: 400;
-    padding: 4px 0;
-  }
-  .site-header.menu-open .emblem-link,.site-header.menu-open .nav-cta {
-    z-index: 2;
-  }
-  .site-header.menu-open {
-    background: #070c15;
-  }
-  .section {
-    padding-block: 70px;
-  }
-  .shell {
-    width: calc(100% - 48px);
-  }
-  .hero {
-    min-height: max(680px,100svh);
-    padding-top: 125px;
-  }
-  .wordmark {
-    font-size: clamp(38px,9.4vw,90px);
-  }
-  .hero h1 {
-    font-size: clamp(39px,6.8vw,60px);
-  }
-  .split,.recognition,.case-intro,.case-columns,.package-layout {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .estimate {
-    position: static;
-  }
-  .services-grid,.process-grid {
-    grid-template-columns: repeat(2,1fr);
-  }
-  .project-card.flagship {
-    display: block;
-  }
-  .project-card.flagship .project-visual {
-    aspect-ratio: 16/9;
-    min-height: 0;
-  }
-  .project-card .project-body {
-    padding: 25px;
-  }
-  .project-visual {
-    min-height: 180px;
-  }
-  .art-panel {
-    min-height: 300px;
-  }
-  .footer-main {
-    gap: 15px;
-  }
-  .footer-side a {
-    font-size: 11px;
-  }
-  .footer-bottom {
-    justify-content: center;
-    text-align: center;
-  }
-  .footer-bottom nav {
-    justify-content: center;
-  }
-  .hero-index {
-    display: none;
-  }
-}
-@media(max-width:550px) {
-  .shell {
-    width: calc(100% - 36px);
-  }
-  .section {
-    padding-block: 56px;
-  }
-  .site-header,.site-header.scrolled {
-    padding: 8px 15px;
-    min-height: 61px;
-    gap: 8px;
-  }
-  .emblem-link {
-    width: 60px;
-  }
-  .emblem-link img {
-    height: 37px;
-  }
-  .nav-cta {
-    font-size: 8px;
-    padding: 7px 10px;
-    min-height: 34px;
-    letter-spacing: .08em;
-    gap: 6px;
-  }
-  .hero {
-    padding: 105px 17px 135px;
-    min-height: max(665px,100svh);
-  }
-  .hero-content {
-    padding-bottom: 10px;
-  }
-  .hero .wordmark {
-    font-size: clamp(27px,9.5vw,54px);
-    letter-spacing: .065em;
-    white-space: nowrap;
-  }
-  .ornament {
-    margin: 15px auto 26px;
-  }
-  .hero-label {
-    font-size: 9px;
-    letter-spacing: .19em;
-    margin-bottom: 17px;
-  }
-  .hero h1 {
-    font-size: clamp(34px,9vw,51px);
-    line-height: 1.12;
-    margin-bottom: 17px;
-    letter-spacing: -.045em;
-  }
-  .hero-copy {
-    font-size: 13px;
-    max-width: 330px;
-    margin-bottom: 25px;
-  }
-  .mobile-break {
-    display: block;
-  }
-  .hero .actions {
-    gap: 10px;
-    flex-direction: column;
-    width: min(100%,285px);
-    margin: auto;
-  }
-  .hero .btn {
-    min-height: 46px;
-  }
-  .hero-verse {
-    bottom: 57px;
-  }
-  .hero-verse p {
-    font-size: 19px;
-  }
-  .section-top {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
-    margin-bottom: 27px;
-  }
-  .section-top h2 {
-    font-size: 43px;
-  }
-  .project-grid,.reviews-grid,.contact-grid,.philosophy-grid {
-    grid-template-columns: 1fr;
-  }
-  .project-card.flagship,.review-card.feature {
-    grid-column: auto;
-  }
-  .project-card .project-body {
-    padding: 22px;
-  }
-  .project-visual {
-    min-height: 190px;
-  }
-  .services-grid,.process-grid {
-    grid-template-columns: 1fr;
-  }
-  .service-card,.process-card {
-    padding: 24px;
-    min-height: auto;
-  }
-  .price-summary {
-    grid-template-columns: 1fr;
-  }
-  .price-summary>div {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-    padding: 20px;
-  }
-  .subhero {
-    min-height: 315px;
-    padding: 112px 0 45px;
-  }
-  .subhero h1 {
-    font-size: 49px;
-  }
-  .subhero .lead {
-    font-size: 13px;
-  }
-  .art-panel {
-    min-height: 230px;
-  }
-  .closing {
-    padding-block: 72px;
-  }
-  .footer {
-    padding: 38px 20px 18px;
-  }
-  .footer-main {
-    grid-template-columns: 1fr 1fr;
-    gap: 26px;
-  }
-  .footer-brand {
-    grid-column: 1/-1;
-    grid-row: 1;
-  }
-  .footer-side {
-    grid-row: 2;
-  }
-  .footer-brand .wordmark {
-    font-size: 30px;
-  }
-  .footer-bottom {
-    margin-top: 25px;
-  }
-  .footer-bottom nav {
-    gap: 15px;
-  }
-  .form-grid,.checks {
-    grid-template-columns: 1fr;
-  }
-  .form-step h3 {
-    font-size: 30px;
-  }
-  .steps {
-    gap: 6px;
-  }
-  .steps div {
-    font-size: 9px;
-  }
-  .form-actions .right {
-    width: 100%;
-    justify-content: flex-end;
-  }
-  .form-actions .btn {
-    padding: 12px 15px;
-  }
-  .option {
-    padding: 15px;
-    gap: 11px;
-  }
-  .option .amount {
-    font-size: 25px;
-  }
-  .option .option-text strong {
-    font-size: 13px;
-  }
-  .option .option-text small {
-    font-size: 11px;
-  }
-  .preview-panel {
-    padding: 12px;
-  }
-  .preview-stage {
-    padding: 7px;
-    min-height: 250px;
-  }
-  .frame-content iframe {
-    height: 540px;
-  }
-  .device-frame[data-device=mobile] {
-    width: 390px;
-    min-width: 0;
-  }
-  .preview-controls {
-    gap: 10px;
-  }
-  .case-meta {
-    grid-template-columns: 1fr 1fr;
-  }
-  .review-card {
-    padding: 24px;
-  }
-  .recognition blockquote {
-    padding-left: 19px;
-  }
-  .philosophy-grid>article {
-    padding: 28px;
-  }
-  .founder-letter {
-    padding: 28px;
-  }
-  .contact-card {
-    padding: 25px;
-  }
-}
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {
-    animation-duration: .01ms!important;
-    transition-duration: .01ms!important;
-    scroll-behavior: auto!important;
-  }
-  .reveal.pending {
-    opacity: 1;
-    transform: none;
-  }
-}
-/* V2: one full screenshot per project, displayed without distortion. */
-.project-visual img {
-  object-fit: contain;
-  object-position: center;
-  background: #080d16;
-}
-.project-card.flagship .project-visual {
-  min-width: 0;
-}
-.preview-panel,.preview-stage,.device-frame,.frame-content {
-  min-width: 0;
-}
-.preview-stage {
-  min-height: 0;
-  overflow: hidden;
-}
-.device-frame {
-  width: 100%;
-  max-width: 100%;
-}
-.frame-content {
-  min-height: 0;
-}
-.screenshot-zoom {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: zoom-in;
-}
-.screenshot-zoom img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-}
-.screenshot-zoom:focus-visible {
-  outline-offset: -4px;
-}
-.image-dialog img {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: 88vw;
-  max-height: 80vh;
-}
-@media(max-width:550px) {
-  .preview-stage {
-    min-height: 0;
-  }
-  .project-visual {
-    min-height: 0;
-  }
-  .project-card.flagship .project-visual {
-    min-height: 0;
-    aspect-ratio: 16/9;
-  }
-  .image-dialog img {
-    max-width: 85vw;
-  }
-}
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
-
-/* Deployment marker and graceful startup fallback */
-.build-marker {
-  margin-left: .65em;
-  opacity: .65;
-  white-space: nowrap;
-}
-.startup-fallback {
-  min-height: 90svh;
-  display: grid;
-  place-content: center;
-  text-align: center;
-  padding: 110px 24px 60px;
-  background: radial-gradient(ellipse at 50% 80%, #142b4d, #050608 70%);
-}
-.startup-fallback h1 { color: var(--gold); }
-.startup-fallback p { color: var(--muted); }
-.startup-fallback [role="status"] { font-size: 13px; margin-top: 24px; }
-
-  </style>
-  <title>Sabr & Shawq | Uniquely unrivalled.</title>
-
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
-  <a class="skip" href="#main-content">Skip to content</a>
-  <header class="site-header" id="site-header">
-    <a href="#/home" class="emblem-link" aria-label="Sabr & Shawq home"><img src="sabr-emblem.png" width="106" height="45" alt="Sabr & Shawq calligraphic emblem"></a>
-    <nav id="site-nav" aria-label="Main navigation">
-      <a href="#/home">Home</a><a href="#/work">Work</a><a href="#/services">Services</a><a href="#/studio">Studio</a><a href="#/pricing">Pricing</a><a href="#/reviews">Reviews</a><a href="#/faq">FAQ</a><a href="#/contact">Contact</a>
-    </nav>
-    <a href="#/start" class="btn btn-small nav-cta">Start a project <span aria-hidden="true">↗</span></a>
-    <button type="button" class="menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
-  </header>
-  <main id="main-content" tabindex="-1">
-    <noscript><section class="section"><h1>Sabr & Shawq</h1><p>Uniquely unrivalled. Please enable JavaScript to explore the studio, portfolio and project enquiry form.</p></section></noscript>
-    <div id="app"><section class="startup-fallback"><h1>Sabr &amp; Shawq</h1><p>Uniquely unrivalled.</p><p role="status">Opening the studio… If this remains visible, please enable JavaScript or reload the page.</p></section></div>
-  </main>
-  <footer id="footer" class="footer"></footer>
-  <div class="toast" role="status" aria-live="polite" id="toast"></div>
-  <dialog id="image-dialog" class="image-dialog"><button class="dialog-close" type="button" aria-label="Close image">×</button><img alt="" src="sabr-emblem.png"><p></p></dialog>
-  <template id="home-template">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="landscape" data-art="summit" aria-hidden="true"></div>
-      <div class="hero-shade"></div>
-      <div class="hero-content">
-        <div class="wordmark" aria-label="Sabr and Shawq">Sabr <span>&amp;</span> Shawq</div>
-        <div class="ornament" aria-hidden="true"><i></i><svg viewBox="0 0 24 24"><path d="M12 1 Q13 11 23 12 Q13 13 12 23 Q11 13 1 12 Q11 11 12 1Z"/></svg><i></i></div>
-        <p class="eyebrow hero-label">Independent web design studio</p>
-        <h1 id="hero-title">Uniquely <em>unrivalled.</em></h1>
-        <p class="hero-copy">Distinctive design. Meticulous development.<br class="mobile-break"> A digital presence entirely your own.</p>
-        <div class="actions"><a class="btn btn-gold" href="#/start">Start a project <span aria-hidden="true">↗</span></a><a class="btn" href="#/work">Explore our work <span aria-hidden="true">↗</span></a></div>
-      </div>
-      <div class="hero-verse"><p>God is with the patient.</p><span>2 : 153</span></div>
-      <a class="scroll-cue" href="#selected-work" aria-label="Scroll to selected work"><span></span></a>
-      <span class="hero-index" aria-hidden="true">01 / THE MIDNIGHT SUMMIT</span>
-    </section>
-    <section id="selected-work" class="section shell">
-      <div class="section-top reveal"><div><p class="eyebrow">01 / Selected work</p><h2>Different businesses.<br><em>Distinctive experiences.</em></h2></div><a class="text-link" href="#/work">View the portfolio <span>↗</span></a></div>
-      <div id="home-projects" class="project-grid reveal"></div>
-    </section>
-    <section class="section section-tinted"><div class="shell split reveal"><div><p class="eyebrow">02 / Our approach</p><h2>Human connection.<br><em>Digital distinction.</em></h2><p class="lead">Behind every business is a person with a story worth understanding. We design with intention, listen with care and create a digital presence that feels unmistakably yours.</p><a class="text-link" href="#/studio">Discover the studio <span>↗</span></a></div><div class="art-panel" data-art="waters" aria-hidden="true"></div></div></section>
-    <section class="section shell"><div class="section-top reveal"><div><p class="eyebrow">03 / What we do</p><h2>Crafted with <em>purpose.</em></h2></div><a href="#/services" class="text-link">Explore our services <span>↗</span></a></div><div id="home-services" class="services-grid reveal"></div></section>
-    <section class="section section-tinted"><div class="shell recognition reveal" id="home-recognition"></div></section>
-    <section class="section shell"><div class="section-top reveal"><div><p class="eyebrow">04 / The investment</p><h2>Premium by design.<br><em>Personal by nature.</em></h2><p class="lead">Straightforward starting prices, optional website care and a conversation before any commitment.</p></div><a class="btn" href="#/pricing">Explore pricing ↗</a></div><div class="price-summary reveal" id="home-prices"></div></section>
-    <section class="section shell"><div class="section-top reveal"><div><p class="eyebrow">05 / The experience</p><h2>From vision <em>to reality.</em></h2></div><a class="text-link" href="#/studio">Our philosophy ↗</a></div><div id="home-process" class="process-grid reveal"></div></section>
-    <div id="home-cta"></div>
-  </template>
-  <!-- Site functionality is embedded below: no external JS file is needed. -->
-  <script id="sabr-script">
-/* SABR & SHAWQ — site configuration. Prices, contact and project details are editable here.
-   Before publishing: use dedicated business contact details; obtain permission for client images and feedback.
-   Add only approved genuine reviews to the REVIEWS configuration. */
-'use strict';
-const CONFIG = {
-    // Contact details supplied by the owner. Use dedicated business contact details before public deployment if these are personal.
-    email: 'edavidwood09@gmail.com', phone: '07422720732',
-    instagram: 'https://www.instagram.com/sabrshawq/',
-    facebook: 'https://www.facebook.com/profile.php?id=61595884534232',
-    // Set individual review.approved flags below only after receiving permission.
-    showDraftReviews: true,
-    websitePlans: [
-        { id: 'essential', name: 'Essential website', price: 300, description: 'A refined, straightforward business website. Ideal for a clear introduction and enquiries.' },
-        { id: 'signature', name: 'Signature website', price: 400, description: 'A more comprehensive, bespoke presence with room to showcase your business.' },
-        { id: 'bespoke', name: 'Bespoke website', price: 500, description: 'A tailored experience with additional design and functionality.' },
-        { id: 'custom', name: 'Custom project', price: null, description: 'For more extensive requirements; let’s discuss a personalised quote.' }
-    ],
-    carePlans: [
-        { id: 'none', name: 'No monthly package', price: 0, description: 'Arrange hosting and ongoing care separately.' },
-        { id: 'essential', name: 'Essential', price: 15, description: 'Hosting, SSL and backups.' },
-        { id: 'professional', name: 'Professional', price: 35, description: 'Essential plus maintenance and agreed minor edits.' },
-        { id: 'premium', name: 'Premium', price: 75, description: 'Professional plus priority support and an agreed larger edit allowance.' }
-    ]
-};
-const PROJECTS = [
-    { id: 'glow-and-go', name: 'Glow & Go Travel', category: 'Travel & tourism', number: '01', flagship: true, art: 'waters', url: 'https://www.glowandgotravel.co.uk/#/home', publicLink: true, image: 'glow-and-go', summary: 'A distinctive digital home for an independent travel agent, built around the personal experience of planning a holiday.', overview: 'Glow & Go Travel helps people plan holidays with individual advice. The website brings together destination inspiration, personal storytelling and a direct route to making a travel enquiry.', direction: 'The design centres the person behind the business while making holiday inspiration easy to explore. Destination-led visuals, clear navigation and welcoming language support a more personal journey.', features: ['Dedicated pages for travel inspiration, the founder and reasons to book', 'Destination gallery, travel journal and client stories', 'Customer feedback and a structured holiday enquiry', 'Responsive navigation and direct contact journey'], recognition: 'The founder reports that Azure’s web design team requested a screenshot of the Glow & Go homepage for an award nomination presentation and has been recommending the work to other travel agents. This is recognition, not a claim of an award win or a formal partnership.' },
-    { id: 'em-clean', name: 'EM Clean & Co', category: 'Domestic cleaning', number: '02', art: 'dunes', publicLink: false, image: 'em-clean', summary: 'A warm, approachable website for a local domestic cleaning business, with a clear path to requesting a quotation.', overview: 'EM Clean & Co provides home cleaning in Kettering and nearby areas. The website introduces its services, the person behind the business and the free home-visit quotation process.', direction: 'A welcoming visual approach supports trust and makes it easy for prospective clients to understand the service. Clear calls to action bring the personal quotation process into focus.', features: ['Service sections covering different areas of the home', 'Business introduction and reassurance information', 'Customer feedback area and FAQs', 'Contact details and structured email enquiry'] },
-    { id: 'dog-cabin', name: 'The Dog Cabin', category: 'Pet care & grooming', number: '03', art: 'celestial', publicLink: false, image: 'dog-cabin', summary: 'A personality-led website for a dog grooming salon, combining a friendly visual identity with straightforward booking information.', overview: 'The Dog Cabin is a grooming salon in Rothwell, Kettering. Its website introduces grooming, washing and nail trimming, alongside a gallery and contact details.', direction: 'A friendly, image-led design communicates warmth and care. Service content, gallery browsing and clear telephone booking prompts help visitors find the information they need.', features: ['Grooming, washing and nail-trimming service sections', 'Photo gallery with enlarged image viewing', 'Customer feedback and frequently asked questions', 'Telephone booking and location information'] }
-];
-const REVIEWS = {
-    "glow-and-go": {
-        "approved": false,
-        "kind": "Industry feedback · permission pending",
-        "attribution": "Harrison · Feedback regarding Glow & Go Travel and Azure Travel",
-        "short": "I really like the look of your website and we think it’s possibly one of the better ones that out of all of our ICs.",
-        "full": "Oh, hello, it’s just Harrison from Majore Indeed. I hope you’re doing all right. Just a quick one. We are currently putting together a bit of a PowerPoint presentation for that’s basically for an award nomination for Azure. And we would ideally like to use a screenshot of your homepage and your website. Um, it’d literally just be a small screenshot. showing the main home page. basically just to show the potential of what our agents can build and what you’ve built. I really like the luck of your website and we think it’s possibly one of the better ones that out of all of our ICs. So, um, massive props to you and Eli, who made that. So, yeah, love to chat. If you’ve got any questions, let me know. Just need your permission really to use the screenshot. Thank you."
-    },
-    "em-clean": {
-        "approved": false,
-        "kind": "Sample testimonial · not yet approved",
-        "attribution": "EM Clean & Co · proposed wording",
-        "short": "Sabr & Shawq understood exactly what we wanted and created a professional website that truly reflects our business. The attention to detail and personal approach made the entire experience effortless."
-    },
-    "dog-cabin": {
-        "approved": false,
-        "kind": "Sample testimonial · not yet approved",
-        "attribution": "The Dog Cabin · proposed wording",
-        "short": "A beautiful website that captures the personality of our business perfectly. The care, creativity and communication throughout the process were exceptional. We couldn’t be happier with the result."
-    }
-};
-const SERVICES = [
-    { title: 'Bespoke web design', desc: 'Distinctive, responsive websites designed around your individual business, vision and audience.', icon: '<rect x="3" y="4" width="26" height="18" rx="1"/><path d="M10 28h12m-6-6v6"/>' },
-    { title: 'Website redesign', desc: 'Reimagine your existing digital presence with a more refined visual identity and clearer user experience.', icon: '<path d="M26 10a12 12 0 1 0 1 12M26 3v8h-8"/>' },
-    { title: 'Logo & branding', desc: 'Thoughtful visual identities, distinctive logos and cohesive colour and typography systems.', icon: '<path d="m16 2 13 14-13 14L3 16Z M16 8l7 8-7 8-7-8Z"/>' },
-    { title: 'Hosting & domains', desc: 'Practical help with hosting, domain setup and the infrastructure behind your website.', icon: '<rect x="4" y="4" width="24" height="10" rx="2"/><rect x="4" y="18" width="24" height="10" rx="2"/><path d="M9 9h2m-2 14h2m7-14h6m-6 14h6"/>' },
-    { title: 'Maintenance & support', desc: 'Optional ongoing care, agreed updates and personal support beyond the launch of your website.', icon: '<path d="M16 3 5 7v9c0 6 5 10 11 13 6-3 11-7 11-13V7Z M11 16l3 3 7-7"/>' }
-];
-const PROCESS = [
-    ['Discovery', 'Understanding you, your business and your ambitions through a genuine conversation.'],
-    ['Direction', 'Establishing the creative vision, requirements and agreed pricing.'],
-    ['Design', 'Crafting a distinctive visual identity and website experience.'],
-    ['Development', 'Bringing the design to life with meticulous attention to detail.'],
-    ['Refinement', 'Working together, reviewing feedback and perfecting the details.'],
-    ['Launch & Beyond', 'Launching your website and offering continued support where required.']
-];
-const FAQ = [
-    ['How much does a website cost?', 'Indicative development packages are £300, £400 and £500. More extensive projects are quoted individually. We agree the final scope and price together before work begins.'],
-    ['How long does a website take to build?', 'It depends on the size and complexity of the project, the content you have available and the feedback process. We will discuss a realistic schedule during discovery.'],
-    ['Can you redesign my existing website?', 'Yes. We can discuss your existing website, what is working well and what needs improving, then agree a tailored redesign.'],
-    ['Will my website work on mobile devices?', 'Responsive design is part of our approach. We tailor the layout and interactions for desktop, tablet and mobile.'],
-    ['Is monthly maintenance compulsory?', 'No. Monthly website care is optional. If you do not choose a care plan, we will discuss your hosting and maintenance arrangements separately.'],
-    ['Will I own my website?', 'We will explain ownership, deliverables, source files, third-party licences and hosting arrangements in your individual project agreement before development.'],
-    ['How do I get started?', 'Explore our work, choose an indicative package if you wish, then send a project enquiry or contact us directly. We can discuss your requirements, budget and next steps personally.']
-];
-const $ = (s, root = document) => root.querySelector(s), $$ = (s, root = document) => [...root.querySelectorAll(s)];
-const escapeHTML = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const money = n => n === null ? 'Custom' : `£${n.toLocaleString('en-GB')}`;
-const localReview = p => Boolean(REVIEWS[p.id].approved && REVIEWS[p.id].short);
-let artCount = 0, observer, toastTimer, currentRoute = '', firstHome = true;
-let selection = { website: 'signature', care: 'none' };
-const enquiry = { step: 0, values: { name: '', business: '', email: 'edavidwood09@gmail.com', phone: '07422720732', industry: '', existing: '', services: [], budget: 'unsure', care: 'undecided', design: '', description: '', date: '', time: '' } };
-/* Original scalable illustration system, no stock photography or external art files. */
-function art(type = 'summit') {
-    const id = 'a' + (++artCount), sky = `${id}s`, glow = `${id}g`, moon = `${id}m`;
-    let seed = type.split('').reduce((n, c) => n + c.charCodeAt(0), 13);
-    const rand = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
-    let stars = '';
-    for (let i = 0; i < 97; i++) {
-        const x = rand() * 1600, y = rand() * 510, r = .45 + rand() * 1.5;
-        stars += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(2)}" fill="${i % 7 === 0 ? '#d9c4a2' : '#d7e3f2'}" opacity="${(.17 + rand() * .57).toFixed(2)}"/>`;
-    }
-    let scenery = '', orb = '';
-    const mountain = `<path d="M0 635 144 519 240 563 381 396 511 520 627 447 777 580 901 457 1000 535 1158 354 1300 480 1400 412 1600 554V900H0Z" fill="#152b49"/><path d="m381 396 130 124-91-52-38 20-55-19-87 94Z" fill="#203958" opacity=".65"/><path d="m1158 354 142 126-85-40-57 28-43-31-115 98Z" fill="#223958" opacity=".65"/><path d="M0 681 185 566 325 632 510 528 668 657 833 602 1001 685 1224 511 1392 605 1600 561V900H0Z" fill="#0d1a2d"/><path d="M0 763 205 672 360 741 557 640 731 719 922 661 1140 749 1378 642 1600 714V900H0Z" fill="#09111e"/><path d="M0 830Q230 717 433 788T830 776T1200 758T1600 765V900H0Z" fill="#050608"/>`;
-    if (type === 'summit' || type === 'celestial') {
-        scenery = mountain;
-        orb = `<circle cx="1290" cy="167" r="47" fill="#d8c3a4" mask="url(#${moon})" opacity=".88"/>`;
-        if (type === 'celestial')
-            orb += `<path d="M184 150 290 115 414 182 510 109" fill="none" stroke="#bca98a" stroke-width="1" opacity=".3"/>`;
-    }
-    else if (type === 'dunes') {
-        orb = '<circle cx="1030" cy="270" r="94" fill="#c4af90" opacity=".72"/>';
-        scenery = '<path d="M0 587Q290 386 670 552T1600 482V900H0Z" fill="#1b304e"/><path d="M0 650Q370 465 810 650T1600 574V900H0Z" fill="#12233a"/><path d="M0 739Q310 555 740 745T1600 679V900H0Z" fill="#0a1525"/><path d="M0 830Q390 674 790 815T1600 756V900H0Z" fill="#050608"/>';
-    }
-    else if (type === 'waters') {
-        orb = '<circle cx="1180" cy="250" r="65" fill="#d1bfa2" opacity=".83"/>';
-        scenery = '<path d="M0 535 177 445 343 529 523 400 710 520 903 431 1100 541 1340 395 1600 520V615H0Z" fill="#172a45"/><path d="M0 590 235 530 408 579 650 486 855 568 1092 530 1310 579 1600 500V635H0Z" fill="#0b1729"/><rect y="598" width="1600" height="302" fill="#091322"/>';
-        for (let i = 0; i < 14; i++) {
-            const y = 615 + i * 15, w = 40 + i * 17;
-            scenery += `<path d="M${1180 - w / 2} ${y}h${w}" stroke="#c4af90" opacity="${(.3 - i * .017).toFixed(3)}" stroke-width="1.8"/>`;
-        }
-        scenery += '<path d="M0 758 173 704 345 780 510 900H0ZM1600 740 1460 766 1330 900H1600Z" fill="#050608"/>';
-    }
-    else {
-        orb = '<circle cx="1190" cy="285" r="116" fill="#142b4d" stroke="#7589a4" stroke-width="1.3"/><circle cx="1190" cy="285" r="92" fill="#0a1224" stroke="#c4af90" stroke-width="1" opacity=".8"/>';
-        scenery = mountain;
-    }
-    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="${sky}" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#050608"/><stop offset=".58" stop-color="#0e1e35"/><stop offset="1" stop-color="#142b4d"/></linearGradient><radialGradient id="${glow}"><stop stop-color="#29486d" stop-opacity=".4"/><stop offset="1" stop-color="#0a1224" stop-opacity="0"/></radialGradient><mask id="${moon}"><rect width="1600" height="900" fill="black"/><circle cx="1290" cy="167" r="47" fill="white"/><circle cx="1308" cy="150" r="45" fill="black"/></mask></defs><rect width="1600" height="900" fill="url(#${sky})"/><ellipse cx="1050" cy="450" rx="900" ry="460" fill="url(#${glow})"/><g class="art-stars">${stars}</g>${orb}${scenery}</svg>`;
-}
-function hydrateArt(root = document) { $$('[data-art]', root).forEach(el => { el.innerHTML = art(el.dataset.art); }); }
-function icon(name) { const paths = { mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>', phone: '<path d="M8 3H4c-1 0-1 2-1 3 0 8 7 15 15 15 1 0 3 0 3-1v-4l-5-2-2 3a14 14 0 0 1-7-7l3-2Z"/>', instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/>', facebook: '<path d="M14 21v-8h3l1-4h-4V7c0-1 1-2 3-2h1V2h-3c-4 0-5 2-5 5v2H7v4h3v8"/>' }; return `<svg viewBox="0 0 24 24" aria-hidden="true">${paths[name] || ''}</svg>`; }
-const verse = () => '<div class="verse"><p>God is with the patient.</p><span>2 : 153</span></div>';
-function contactLink(type, label) { const value = CONFIG[type]; if (!value)
-    return `<a href="#/contact">${icon(type)}${label}</a>`; return `<a href="${type === 'email' ? 'mailto:' : 'tel:'}${escapeHTML(type === 'phone' ? value.replace(/[^+\d]/g, '') : value)}">${icon(type)}${label}</a>`; }
-function footer() { return `<div class="footer-main"><div class="footer-side"><p class="eyebrow">Contact</p>${contactLink('email', 'Email us')}${contactLink('phone', 'Call us')}</div><div class="footer-brand"><a href="#/home" aria-label="Return to home"><img src="sabr-emblem.png" alt="" width="80" height="42"></a><a href="#/home" class="wordmark">Sabr <span>&amp;</span> Shawq</a>${verse()}</div><div class="footer-side"><p class="eyebrow">Follow us</p><a href="${CONFIG.instagram}" target="_blank" rel="noopener noreferrer">Instagram ${icon('instagram')}</a><a href="${CONFIG.facebook}" target="_blank" rel="noopener noreferrer">Facebook ${icon('facebook')}</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} Sabr &amp; Shawq. All rights reserved. <small class="build-marker">Build 3.2</small></span><nav aria-label="Footer navigation"><a href="#/reviews">Reviews</a><a href="#/faq">FAQ</a><a href="#/privacy">Privacy</a><a href="#/terms">Terms</a></nav></div>`; }
-function subhero(kicker, title, desc, illustration = 'celestial') { return `<section class="subhero"><div class="landscape" data-art="${illustration}" aria-hidden="true"></div><div class="shell"><p class="eyebrow">${kicker}</p><h1>${title}</h1><p class="lead">${desc}</p></div></section>`; }
-function closing() { return `<section class="closing"><div class="landscape" data-art="dunes" aria-hidden="true"></div><p class="eyebrow">Your next chapter</p><h2>Let’s create something <em>exceptional.</em></h2><p class="lead">A genuine conversation. A distinctive vision. A website entirely your own.</p><a href="#/start" class="btn btn-gold">Start a project ↗</a></section>`; }
-function miniReview(p) { const r = REVIEWS[p.id]; return `<div class="mini-review">${localReview(p) ? `<p>“${escapeHTML(r.short)}”</p><small>${escapeHTML(r.approved ? r.attribution : r.kind)}</small>` : '<p>Client feedback coming soon.</p>'}<a class="text-link" href="#/reviews">All reviews ↗</a></div>`; }
-function projectCard(p) { return `<article class="project-card ${p.flagship ? 'flagship' : ''}"><a href="#/work/${p.id}" class="project-visual" aria-label="Explore ${escapeHTML(p.name)} case study"><div class="project-placeholder"><div data-art="${p.art}" style="position:absolute;inset:0" aria-hidden="true"></div><div class="placeholder-label"><strong>${p.name}</strong><small>Explore the website preview</small></div></div><img data-screenshot="${p.image}.png" alt="${p.name} website screenshot" hidden></a><div class="project-body"><p class="eyebrow">${p.number} / ${p.category}${p.flagship ? ' · Flagship project' : ''}</p><h3><a href="#/work/${p.id}">${p.name}</a></h3><p>${p.summary}</p><a href="#/work/${p.id}" class="text-link">Explore case study <span>↗</span></a>${miniReview(p)}</div></article>`; }
-function serviceCards() { return SERVICES.map((s, i) => `<article class="service-card"><span class="number">0${i + 1} /</span><svg class="service-icon" viewBox="0 0 32 32" aria-hidden="true">${s.icon}</svg><h3>${s.title}</h3><p>${s.desc}</p><a href="#/start" class="text-link">Discuss your project ↗</a></article>`).join(''); }
-function processCards() { return PROCESS.map(([t, d], i) => `<article class="process-card"><span class="number">0${i + 1} /</span><h3>${t}</h3><p>${d}</p></article>`).join(''); }
-function recognition() { const r = REVIEWS['glow-and-go']; return `<div><p class="eyebrow">Industry recognition</p><h2>Craftsmanship that <em>gets noticed.</em></h2><p class="lead">${localReview(PROJECTS[0]) ? 'The work for Glow & Go Travel led to a request to feature the website in an award nomination presentation and recommendations to other travel agents. No award win or official partnership is claimed.' : 'Discover how a tailored website brings a travel business’s individual story and services together.'}</p><a class="text-link" style="margin-top:20px" href="#/work/glow-and-go">Explore the flagship project ↗</a></div>${localReview(PROJECTS[0]) ? `<blockquote>“${escapeHTML(r.short)}”<cite>${escapeHTML(r.approved ? r.attribution : r.kind)}<br><a href="#/reviews" class="text-link" style="margin-top:10px">Read the full feedback ↗</a></cite></blockquote>` : '<div class="art-panel" data-art="celestial" aria-hidden="true"></div>'}`; }
-function renderHome() { const app = $('#app'); app.append($('#home-template').content.cloneNode(true)); $('#home-projects').innerHTML = PROJECTS.map(projectCard).join(''); $('#home-services').innerHTML = serviceCards(); $('#home-recognition').innerHTML = recognition(); $('#home-prices').innerHTML = CONFIG.websitePlans.slice(0, 3).map(p => `<div><p class="eyebrow">${p.name}</p><strong>${money(p.price)}</strong><small>Indicative one-off investment</small></div>`).join(''); $('#home-process').innerHTML = processCards(); $('#home-cta').innerHTML = closing(); if (!firstHome)
-    $('.hero-content').style.animation = 'none'; firstHome = false; $('.scroll-cue').addEventListener('click', e => { e.preventDefault(); $('#selected-work').scrollIntoView({ behavior: 'smooth' }); }); }
-function renderWork() { return subhero('01 / The portfolio', 'Distinctive by <em>nature.</em>', 'Different businesses. Individual visions. A collection of carefully considered digital experiences.', 'summit') + `<section class="section shell"><div class="section-top"><div><p class="eyebrow">Selected client work</p><h2>Three businesses.<br><em>Three individual stories.</em></h2></div><p class="lead">Explore each project in its own case study.</p></div><div class="project-grid">${PROJECTS.map(projectCard).join('')}</div></section>` + closing(); }
-function renderCase(p) { return subhero(`${p.number} / ${p.category}`, `${p.name}<em>.</em>`, p.summary, p.art) + `<section class="section shell"><a href="#/work" class="back-link">← All projects</a><div class="case-intro"><p class="lead">${p.overview}</p><div class="case-meta"><div><small>Client</small><strong>${p.name}</strong></div><div><small>Industry</small><strong>${p.category}</strong></div><div><small>Scope</small><strong>Website design & development</strong></div><div><small>Project</small><strong>${p.flagship ? 'Flagship' : 'Selected work'}</strong></div></div></div><div class="preview-panel"><div class="preview-controls"><div><p class="eyebrow" style="margin:0">Website showcase</p><span class="fine-print">Original website screenshot · tap or click to enlarge</span></div></div><div class="preview-stage"><div class="device-frame"><div class="frame-top" aria-hidden="true"><i></i><i></i><i></i></div><div class="frame-content" id="frame-content"></div></div></div><p class="preview-note">The original screenshot scales to fit any screen. Select it to view the full image.</p>${p.publicLink ? `<a class="text-link" style="margin-top:18px" href="${p.url}" target="_blank" rel="noopener noreferrer">Visit live website ↗</a>` : ''}</div><div class="case-columns"><div><p class="eyebrow">Creative direction</p><h3>Thoughtfully designed.</h3><p>${p.direction}</p></div><div><p class="eyebrow">Project details</p><h3>What it includes.</h3><ul>${p.features.map(f => `<li>${f}</li>`).join('')}</ul></div></div>${p.flagship && localReview(p) ? `<div class="case-review review-card"><p class="eyebrow">Industry recognition · ${REVIEWS[p.id].approved ? 'Approved' : 'Permission pending'}</p><h3>Recognition beyond the project.</h3><p class="lead">${p.recognition}</p><a href="#/reviews" class="text-link">Read the full message ↗</a></div>` : ''}<div class="case-review">${miniReview(p)}</div></section>` + closing(); }
-function renderServices() { return subhero('02 / Our services', 'Design with <em>intention.</em>', 'Distinctive websites, thoughtful redesigns and the support to keep your digital presence at its best.', 'waters') + `<section class="section shell"><div class="section-top"><div><p class="eyebrow">Our craft</p><h2>Made around <em>you.</em></h2></div><a href="#/pricing" class="text-link">Explore indicative pricing ↗</a></div><div class="services-grid">${serviceCards()}</div></section><section class="section section-tinted"><div class="shell"><div class="section-top"><div><p class="eyebrow">How we work</p><h2>From vision <em>to reality.</em></h2></div></div><div class="process-grid">${processCards()}</div></div></section>` + closing(); }
-function renderStudio() { return subhero('03 / The studio', 'Purpose beyond <em>design.</em>', 'An independent UK web design studio built around patience, aspiration and genuine human connection.', 'dunes') + `<section class="section shell"><div class="section-top"><div><p class="eyebrow">The name behind the craft</p><h2>Two words.<br><em>One philosophy.</em></h2></div></div><div class="philosophy-grid"><article><div class="arabic" lang="ar" dir="rtl" style="text-align:left">صبر</div><p class="eyebrow">Sabr / Patience</p><h3>Patience. Perseverance.</h3><p>Trusting in God's timing and taking the time to do things with intention.</p></article><article><div class="arabic" lang="ar" dir="rtl" style="text-align:left">شوق</div><p class="eyebrow">Shawq / Aspiration</p><h3>Longing. Aspiration.</h3><p>The desire to become better, create better and give more to those who matter.</p></article></div><article class="founder-letter"><p class="eyebrow">A letter from the founder</p><h2>The person behind <em>the purpose.</em></h2><p class="byline">Eli Wood — Founder of Sabr &amp; Shawq</p><p>Sabr &amp; Shawq was founded with a purpose that extends beyond digital design.</p><p>My journey into web development began with an ambition to pursue medicine, fund my future education and, truly above all, provide for the people I love. What began as a means of achieving those ambitions has become an opportunity to create meaningful work and build genuine relationships.</p><p>The name Sabr &amp; Shawq reflects two principles that guide my life.</p><p><strong>Sabr — <span lang="ar">صبر</span></strong><br>Patience. Perseverance. Trusting in God's timing, even when the path ahead is uncertain.</p><p><strong>Shawq — <span lang="ar">شوق</span></strong><br>Longing. Aspiration. The desire to become the best version of oneself, not only for personal achievement, but for those who matter most.</p><p>In an increasingly automated world, I believe genuine human connection is more important than ever. My ambition to pursue medicine has reinforced my appreciation for empathy, compassion and understanding — values that I bring into every professional relationship.</p><p>Behind every business is a person with ambitions, responsibilities and a story worth understanding.</p><p>At Sabr &amp; Shawq, I believe exceptional design begins with understanding that person.</p><p>My ambition is to build something meaningful, pursue excellence and create a future in which success allows me to give back to those I love.</p><div class="signature" aria-label="Stylised signature: Eli Wood">Eli Wood</div><div class="signature-label">Founder · Sabr &amp; Shawq</div>${verse()}</article></section><section class="section section-tinted"><div class="shell"><div class="section-top"><div><p class="eyebrow">The experience</p><h2>From vision <em>to reality.</em></h2></div></div><div class="process-grid">${processCards()}</div></div></section>` + closing(); }
-function renderPricing() { return subhero('04 / The investment', 'Tailored <em>to you.</em>', 'Your vision. Your requirements. Your investment. Choose a starting point and discuss the details personally.', 'eclipse') + `<section class="section shell"><div class="package-layout"><div class="package-options"><p class="eyebrow">Personalised package builder</p><h2>01 / Your website</h2>${CONFIG.websitePlans.map(p => planOption(p, 'website', selection.website)).join('')}<h2>02 / Optional monthly care</h2>${CONFIG.carePlans.map(p => planOption(p, 'care', selection.care)).join('')}<p class="fine-print">Hosting and care allowances, timing and final project scope are agreed individually. Prices are estimates, not binding quotations.</p></div><aside class="estimate" aria-label="Your estimated investment"><p class="eyebrow">Your estimated investment</p><h3>A starting point.</h3><div class="estimate-line"><span>One-off development</span><strong id="estimate-one"></strong></div><div class="estimate-line"><span>Optional monthly care</span><strong id="estimate-month"></strong></div><p class="fine-print">No payment is taken here. Final pricing and payment arrangements are discussed personally.</p><button class="btn btn-gold" id="use-plan" type="button">Continue to enquiry ↗</button></aside></div></section>`; }
-function planOption(p, group, selected) { return `<label class="option"><input type="radio" name="${group}" value="${p.id}" ${p.id === selected ? 'checked' : ''}><span class="option-text"><strong>${p.name}</strong><small>${p.description}</small></span><span class="amount">${money(p.price)}${group === 'care' ? '<small>/mo</small>' : ''}</span></label>`; }
-function renderReviews() {
-    return subhero('05 / Kind words', 'Work that <em>speaks.</em>', 'Feedback and industry recognition from the people connected with our projects.', 'celestial') + `<section class="section shell"><div class="reviews-grid">${PROJECTS.map(p => {
-        const r = REVIEWS[p.id];
-        const visible = r.approved || CONFIG.showDraftReviews;
-        return `<article class="review-card ${p.flagship ? 'feature' : ''}">
-            <p class="eyebrow">${p.flagship ? 'Azure Travel · Industry recognition' : p.category}</p>
-            <h3>${escapeHTML(p.name)}</h3>
-            ${visible ? `<span class="draft-tag">${escapeHTML(r.approved ? (p.flagship ? 'Industry feedback' : 'Client feedback') : r.kind)}</span>
-            <span class="quote-mark" aria-hidden="true">“</span>
-            ${p.flagship ? `<blockquote>${escapeHTML(r.short)}</blockquote>
-            <p class="lead">Feedback regarding the request to include the Glow &amp; Go Travel homepage in an Azure Travel award nomination presentation.</p>
-            <details open><summary class="text-link">Full message from Harrison</summary><p class="transcript" style="margin-top:20px">${escapeHTML(r.full)}</p></details>
-            <p class="fine-print">Transcript supplied by the founder; wording preserved as supplied. The request was for an award nomination presentation, not an award win or formal partnership.</p>` : `<blockquote>${escapeHTML(r.short)}</blockquote>`}
-            <p class="review-footer">${escapeHTML(r.approved ? (p.flagship ? r.attribution : p.name) : r.attribution)}</p>` : '<p class="lead">Feedback will be added once permission to publish has been confirmed.</p>'}
-        </article>`;
-    }).join('')}</div></section>`;
-}
-function renderFAQ() { return subhero('06 / Good to know', 'A few <em>answers.</em>', 'Clear information, straightforward expectations and an invitation to ask anything else.', 'waters') + `<section class="section shell"><div class="faq-list">${FAQ.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join('')}</div></section>` + closing(); }
-function renderContact() { return subhero('07 / Let’s connect', 'It starts with <em>a conversation.</em>', 'Tell us about your business, your ambitions and what you would like to create.', 'dunes') + `<section class="section shell"><div class="contact-grid"><article class="contact-card"><p class="eyebrow">Direct contact</p><h3>Speak personally.</h3><p>For questions, ideas or an introductory conversation.</p>${CONFIG.email ? `<a href="mailto:${escapeHTML(CONFIG.email)}">${escapeHTML(CONFIG.email)}</a>` : '<p class="fine-print">Business email to be configured before launch.</p>'}${CONFIG.phone ? `<a href="tel:${escapeHTML(CONFIG.phone.replace(/[^+\d]/g, ''))}">${escapeHTML(CONFIG.phone)}</a>` : '<p class="fine-print">Business telephone to be configured before launch.</p>'}<a href="${CONFIG.instagram}" target="_blank" rel="noopener noreferrer" class="text-link">Instagram ↗</a><a href="${CONFIG.facebook}" target="_blank" rel="noopener noreferrer" class="text-link">Facebook ↗</a></article><article class="contact-card"><p class="eyebrow">Your project</p><h3>Share your vision.</h3><p>Introduce your business, choose an indicative budget and tell us about your requirements. You can also request a preferred call time.</p><a href="#/start" class="btn btn-gold">Start a project ↗</a><a href="#/pricing" class="text-link">Explore website packages ↗</a></article></div></section>` + closing(); }
-function renderStart() { return subhero('08 / Start a project', 'Something exceptional <em>begins here.</em>', 'Share a little about yourself and your vision. No commitment, just a personal conversation.', 'summit') + `<section class="section shell"><div class="form-wrap"><div class="form-heading"><p class="eyebrow">Your project enquiry</p><h2>Tell us your <em>story.</em></h2><p>Four small steps towards a website entirely your own.</p></div><div id="enquiry-steps"></div><form id="enquiry-form" novalidate></form></div></section>`; }
-function renderLegal(route) { const privacy = route === 'privacy'; return subhero('Information / Draft for review', privacy ? 'Your <em>privacy.</em>' : 'Working <em>together.</em>', privacy ? 'A straightforward explanation of how this website handles enquiry information.' : 'An outline of how individual projects are agreed.', 'eclipse') + `<section class="section shell legal"><p class="draft-tag">Draft · review before public launch</p>${privacy ? '<h2>Project enquiries</h2><p>The project form prepares an email locally in your browser. It does not send information to a website server. If you choose to send the prepared email, your email provider and the recipient will process the information you include.</p><h2>External services</h2><p>Fonts may load from Google Fonts. If you choose a live portfolio preview or follow a social link, the external website may process your visit under its own privacy policy.</p><h2>Data and cookies</h2><p>This version has no analytics or marketing cookies of its own. It keeps unfinished form values in memory while the page is open. Confirm the actual processing, retention, contact details and applicable rights before publication.</p>' : '<h2>Indicative pricing</h2><p>Website packages and monthly care prices are indicative. No payment is collected here, and submitting an enquiry does not create a project contract.</p><h2>Individual project agreements</h2><p>Scope, delivery schedule, payment terms, revisions, ownership, licences, hosting and ongoing support are agreed separately before work begins.</p><h2>Website content</h2><p>Portfolio material and feedback should only be published with appropriate permissions. This draft is not a complete set of contractual terms.</p>'}<h2>Questions</h2><p>Contact the studio through the <a class="text-link" href="#/contact">contact page</a>.</p></section>`; }
-/* Interaction layer: screenshots, portfolio previews, routing and enquiry. */
-function hydrateScreenshots(root = document) { $$('img[data-screenshot]', root).forEach(img => { img.addEventListener('load', () => { img.hidden = false; const p = img.parentElement.querySelector('.project-placeholder'); if (p)
-    p.hidden = true; }, { once: true }); img.addEventListener('error', () => { img.hidden = true; }, { once: true }); img.src = img.dataset.screenshot; }); }
-function showImage(src, alt) { const dialog = $('#image-dialog'); $('img', dialog).src = src; $('img', dialog).alt = alt; $('p', dialog).textContent = alt; if (typeof dialog.showModal === 'function')
-    dialog.showModal();
-else
-    window.open(src, '_blank', 'noopener'); }
-// One screenshot per project, responsive on every device. No external embed required.
-function initCase(p) {
-    const content = $('#frame-content');
-    content.innerHTML = '<div class="frame-message"><p>Preparing website preview…</p></div>';
-    const img = new Image();
-    img.alt = `${p.name} — original website screenshot`;
-    img.onload = () => {
-        if (!content.isConnected)
-            return;
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'screenshot-zoom';
-        button.setAttribute('aria-label', `Enlarge ${p.name} website screenshot`);
-        button.append(img);
-        button.addEventListener('click', () => showImage(img.src, img.alt));
-        content.replaceChildren(button);
-    };
-    img.onerror = () => {
-        if (!content.isConnected)
-            return;
-        content.innerHTML = `<div class="frame-message"><p class="eyebrow">${p.category}</p><h3>${p.name}</h3><p>The project screenshot will appear here when available.</p></div>`;
-    };
-    img.src = `${p.image}.png`;
-}
-function initPricing() { const refresh = () => { const w = CONFIG.websitePlans.find(p => p.id === selection.website), c = CONFIG.carePlans.find(p => p.id === selection.care); $('#estimate-one').textContent = money(w.price); $('#estimate-month').textContent = c.price ? `${money(c.price)}/mo` : '£0/mo'; }; $$('.package-options input').forEach(input => input.addEventListener('change', () => { selection[input.name] = input.value; refresh(); })); $('#use-plan').addEventListener('click', () => { const w = CONFIG.websitePlans.find(p => p.id === selection.website); enquiry.values.budget = w.price === null ? 'custom' : String(w.price); enquiry.values.care = selection.care; enquiry.step = 0; location.hash = '/start'; }); refresh(); }
-const inputField = (name, label, type = 'text', placeholder = '', required = false, full = false) => `<label class="field ${full ? 'full' : ''}"><span>${label}${required ? ' *' : ''}</span><input name="${name}" type="${type}" value="${escapeHTML(enquiry.values[name])}" placeholder="${escapeHTML(placeholder)}" ${required ? 'required' : ''} ${name === 'date' ? `min="${localDate()}"` : ''} ${name === 'email' ? 'autocomplete="email"' : name === 'name' ? 'autocomplete="name"' : name === 'phone' ? 'autocomplete="tel"' : name === 'business' ? 'autocomplete="organization"' : ''}></label>`;
-function localDate() { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; }
-function selectField(name, label, options) { return `<label class="field"><span>${label}</span><select name="${name}">${options.map(([val, text]) => `<option value="${val}" ${enquiry.values[name] === val ? 'selected' : ''}>${escapeHTML(text)}</option>`).join('')}</select></label>`; }
-function textareaField(name, label, placeholder, required = false) { return `<label class="field full"><span>${label}${required ? ' *' : ''}</span><textarea name="${name}" placeholder="${escapeHTML(placeholder)}" ${required ? 'required' : ''} maxlength="2500">${escapeHTML(enquiry.values[name])}</textarea></label>`; }
-function enquiryBody() { const v = enquiry.values; const c = CONFIG.carePlans.find(p => p.id === v.care); return `Hello Sabr & Shawq,\n\nI would like to discuss a website project.\n\nName: ${v.name}\nBusiness: ${v.business}\nEmail: ${v.email}\nPhone: ${v.phone || 'Not provided'}\nIndustry: ${v.industry}\nExisting website: ${v.existing || 'Not provided'}\nRequired services: ${v.services.join(', ') || 'To discuss'}\nEstimated budget: ${v.budget === 'unsure' ? 'To discuss' : v.budget === 'custom' ? 'Custom quotation' : '£' + v.budget}\nMonthly care: ${c ? `${c.name} (${money(c.price)}/month)` : 'To discuss'}\nDesign preferences: ${v.design || 'To discuss'}\nProject description: ${v.description}\nPreferred call date: ${v.date || 'Not requested'}\nPreferred call time (UK time): ${v.time || 'Not requested'}\n\nI understand that any call time and pricing are subject to confirmation.\n\nKind regards,\n${v.name}`; }
-function renderForm() {
-    const step = enquiry.step;
-    $('#enquiry-steps').innerHTML = `<div class="steps" aria-label="Step ${step + 1} of 4">${['Introduction', 'Your project', 'Investment', 'Next steps'].map((s, i) => `<div class="${i === step ? 'current' : i < step ? 'complete' : ''}" ${i === step ? 'aria-current="step"' : ''}>0${i + 1} / ${s}</div>`).join('')}</div>`;
-    const form = $('#enquiry-form');
-    let content = '';
-    if (step === 0) {
-        content = `<h3>01 — Tell us about yourself.</h3><div class="form-grid">${inputField('name', 'Full name', 'text', 'Your name', true)}${inputField('business', 'Business name', 'text', 'Your business', true)}${inputField('email', 'Email address', 'email', 'you@business.co.uk', true)}${inputField('phone', 'Phone number (optional)', 'tel', 'Your telephone')}${inputField('industry', 'Industry', 'text', 'Your industry', true, true)}</div>`;
-    }
-    else if (step === 1) {
-        content = `<h3>02 — Your vision.</h3><div class="form-grid"><fieldset class="field full"><legend>Required services</legend><div class="checks">${SERVICES.map(s => `<label class="check"><input type="checkbox" name="services" value="${escapeHTML(s.title)}" ${enquiry.values.services.includes(s.title) ? 'checked' : ''}>${s.title}</label>`).join('')}</div></fieldset>${inputField('existing', 'Existing website (if applicable)', 'url', 'https://', false, true)}${textareaField('design', 'Design preferences', 'Colours, styles or websites you admire…')}${textareaField('description', 'Project description', 'Tell us what you would like to achieve.', true)}</div>`;
-    }
-    else if (step === 2) {
-        content = `<h3>03 — Your investment.</h3><div class="form-grid">${selectField('budget', 'Estimated website budget', [["unsure", "I’d like some guidance"], ['300', 'Around £300'], ['400', 'Around £400'], ['500', 'Around £500'], ['custom', '£500+ / custom quotation']])}${selectField('care', 'Optional monthly care', [['undecided', 'I’d like to discuss this'], ...CONFIG.carePlans.map(p => [p.id, `${p.name}${p.price ? ' — ' + money(p.price) + '/month' : ''}`])])}</div><p class="fine-print">All prices are indicative and subject to your individual requirements. No payment is taken on the website.</p>`;
-    }
-    else {
-        content = `<h3>04 — Let’s connect.</h3><p class="lead" style="margin:0 0 20px">Request a call if you prefer to talk through your project. Times are subject to confirmation.</p><div class="form-grid">${inputField('date', 'Preferred call date (optional)', 'date')}${inputField('time', 'Preferred call time (UK time, optional)', 'time')}</div><p class="fine-print">Your email application will open with the enquiry prepared. You will need to press Send yourself. No information is submitted automatically.</p><div class="review-enquiry" id="enquiry-summary"></div>${CONFIG.email ? '' : '<p class="fine-print">Preview mode: configure a dedicated business email in script.js before sending enquiries. You can still copy the prepared enquiry.</p>'}`;
-    }
-    form.innerHTML = `<div class="form-step">${content}</div><p class="form-error" id="form-error" role="alert"></p><div class="form-actions">${step > 0 ? '<button class="btn" type="button" id="form-back">← Back</button>' : ''}<div class="right">${step === 3 ? '<button class="btn" type="button" id="copy-enquiry">Copy enquiry</button>' : ''}<button class="btn btn-gold" type="submit" ${step === 3 && !CONFIG.email ? 'disabled' : ''}>${step === 3 ? 'Prepare email ↗' : 'Continue →'}</button></div></div>`;
-    if (step === 3)
-        $('#enquiry-summary').textContent = enquiryBody();
-    function sync() { const fd = new FormData(form); for (const [k, v] of fd.entries()) {
-        if (k !== 'services')
-            enquiry.values[k] = String(v);
-    } if (step === 1)
-        enquiry.values.services = fd.getAll('services').map(String); if (step === 3)
-        $('#enquiry-summary').textContent = enquiryBody(); }
-    form.oninput = sync;
-    form.onchange = sync;
-    const back = $('#form-back');
-    if (back)
-        back.onclick = () => { sync(); enquiry.step--; renderForm(); };
-    const copy = $('#copy-enquiry');
-    if (copy)
-        copy.onclick = () => { sync(); copyText(enquiryBody()); };
-    form.onsubmit = e => { e.preventDefault(); sync(); if (!form.checkValidity()) {
-        const invalid = $(':invalid', form);
-        $('#form-error').textContent = 'Please complete the required fields correctly.';
-        if (invalid) {
-            invalid.focus();
-            invalid.reportValidity();
-        }
-        return;
-    } if (step === 3 && enquiry.values.time && !enquiry.values.date) {
-        $('#form-error').textContent = 'Please choose a date for your preferred call time, or leave both blank.';
-        return;
-    } if (step < 3) {
-        enquiry.step++;
-        renderForm();
-        return;
-    } if (CONFIG.email) {
-        const subject = `New website enquiry — ${enquiry.values.business.replace(/[\r\n]/g, ' ')}`;
-        const mailto = `mailto:${CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(enquiryBody())}`;
-        location.href = mailto;
-        toast('Email prepared. Please press Send in your email app.');
-    } };
-}
-async function copyText(text) { try {
-    if (navigator.clipboard && window.isSecureContext)
-        await navigator.clipboard.writeText(text);
-    else {
-        const field = document.createElement('textarea');
-        field.value = text;
-        field.style.position = 'fixed';
-        field.style.opacity = '0';
-        document.body.append(field);
-        field.select();
-        const ok = document.execCommand('copy');
-        field.remove();
-        if (!ok)
-            throw Error('copy unavailable');
-    }
-    toast('Enquiry copied.');
-}
-catch {
-    toast('Copy is unavailable. Select the enquiry summary and copy it manually.');
-} }
-function toast(message) { const el = $('#toast'); el.textContent = message; el.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 4500); }
-function reveal() { if (observer)
-    observer.disconnect(); if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches)
-    return; observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) {
-    e.target.classList.add('visible');
-    observer.unobserve(e.target);
-} }), { threshold: .08 }); $$('.reveal').forEach(el => { if (el.getBoundingClientRect().top > innerHeight + 40) {
-    el.classList.add('pending');
-    observer.observe(el);
-} }); }
-const ROUTES = { home: { title: 'Uniquely unrivalled.', render: renderHome }, work: { title: 'Our Work', render: renderWork }, services: { title: 'Our Services', render: renderServices }, studio: { title: 'The Studio', render: renderStudio }, pricing: { title: 'Pricing & Plans', render: renderPricing }, reviews: { title: 'Reviews & Recognition', render: renderReviews }, faq: { title: 'FAQs', render: renderFAQ }, contact: { title: 'Contact', render: renderContact }, start: { title: 'Start a Project', render: renderStart }, privacy: { title: 'Privacy', render: () => renderLegal('privacy') }, terms: { title: 'Terms', render: () => renderLegal('terms') } };
-function setMenu(open) { const header = $('#site-header'), toggle = $('.menu-toggle'); header.classList.toggle('menu-open', open); toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); if (open)
-    $('nav a', header).focus(); }
-function route() {
-    const path = location.hash.replace(/^#\/?/, '').split('?')[0].replace(/\/$/, '') || 'home';
-    if (path === 'main-content' || path === 'selected-work') {
-        if (!currentRoute) {
-            location.replace('#/home');
-        }
-        return;
-    }
-    if (currentRoute === path)
-        return;
-    currentRoute = path;
-    setMenu(false);
-    const app = $('#app');
-    app.replaceChildren();
-    let p = null, section = path.split('/')[0], entry = ROUTES[path];
-    if (path.startsWith('work/'))
-        p = PROJECTS.find(x => x.id === path.split('/')[1]);
-    if (p) {
-        app.innerHTML = renderCase(p);
-        document.title = `${p.name} | Sabr & Shawq`;
-    }
-    else if (entry) {
-        if (path === 'home')
-            entry.render();
-        else
-            app.innerHTML = entry.render();
-        document.title = `${entry.title} | Sabr & Shawq`;
-    }
-    else {
-        app.innerHTML = subhero('404 / A different path', 'The way <em>home.</em>', 'This page could not be found.') + '<section class="section shell"><a class="btn btn-gold" href="#/home">Return home ↗</a></section>';
-        document.title = 'Page not found | Sabr & Shawq';
-    }
-    $$('#site-nav a').forEach(a => { const active = a.getAttribute('href') === `#/${section}`; a.classList.toggle('active', active); if (active)
-        a.setAttribute('aria-current', 'page');
-    else
-        a.removeAttribute('aria-current'); });
-    hydrateArt(app);
-    hydrateScreenshots(app);
-    if (p)
-        initCase(p);
-    if (path === 'pricing')
-        initPricing();
-    if (path === 'start')
-        renderForm();
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    if (path !== 'home') {
-        $('#main-content').focus({ preventScroll: true });
-        app.classList.remove('route-enter');
-        void app.offsetWidth;
-        app.classList.add('route-enter');
-    }
-    else
-        app.classList.remove('route-enter');
-    reveal();
-}
-$('#footer').innerHTML = footer();
-$('.menu-toggle').addEventListener('click', () => setMenu($('.menu-toggle').getAttribute('aria-expanded') !== 'true'));
-$('#site-nav').addEventListener('click', e => { if (e.target.closest('a'))
-    setMenu(false); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('#site-header').classList.contains('menu-open')) {
-    setMenu(false);
-    $('.menu-toggle').focus();
-} });
-window.addEventListener('scroll', () => $('#site-header').classList.toggle('scrolled', window.scrollY > 65), { passive: true });
-window.addEventListener('hashchange', route);
-$('.skip').addEventListener('click', e => { e.preventDefault(); $('#main-content').focus(); });
-const dialog = $('#image-dialog');
-$('.dialog-close', dialog).addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', e => { if (e.target === dialog)
-    dialog.close(); });
-route();
 
-  </script>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement">
+    <div class="container announcement-inner">
+      <span>✦ A little extra care for the place you call home</span>
+      <span class="announcement-location">
+        ⌖ Kettering & nearby areas
+      </span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" id="home">
+    <div class="container nav">
+
+      <a href="#home" class="logo"
+         aria-label="E M Clean and Co homepage">
+
+        <span class="logo-icon">
+          <img src="em-logo.png" alt="">
+        </span>
+
+        <span class="logo-text">
+          <strong>E M CLEAN <span>&</span> CO</strong>
+          <small>HOME CLEANING · KETTERING</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#services">What we do</a>
+        <a href="#about">Our story</a>
+        <a href="#reviews">Kind words</a>
+      </nav>
+
+      <div class="nav-actions">
+
+        <!-- SOCIAL LINKS -->
+        <div class="social-links header-social">
+
+          <a href="https://www.facebook.com/profile.php?id=61579246101354"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="E M Clean and Co on Facebook"
+             title="Facebook">
+            <span class="facebook-symbol">f</span>
+          </a>
+
+          <a href="https://www.instagram.com/emcleanandco/?hl=en"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="E M Clean and Co on Instagram"
+             title="Instagram">
+            <span class="instagram-symbol">I</span>
+          </a>
+
+        </div>
+
+        <a class="phone-link" href="tel:+447787404493">
+          07787 404493
+        </a>
+
+        <a href="#contact" class="btn btn-primary nav-cta">
+          Get a free quote <span>→</span>
+        </a>
+
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+          aria-label="Open menu">
+          ☰
+        </button>
+
+      </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <nav id="mobileMenu"
+         class="mobile-menu"
+         aria-label="Mobile navigation"
+         hidden>
+
+      <a href="#services">What we do</a>
+      <a href="#about">Our story</a>
+      <a href="#reviews">Kind words</a>
+      <a href="#contact">Get a free quote</a>
+
+      <a href="https://www.facebook.com/profile.php?id=61579246101354"
+         target="_blank"
+         rel="noopener noreferrer">
+        Facebook ↗
+      </a>
+
+      <a href="https://www.instagram.com/emcleanandco/?hl=en"
+         target="_blank"
+         rel="noopener noreferrer">
+        Instagram ↗
+      </a>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+
+          <p class="eyebrow">
+            — DOMESTIC CLEANING, DONE WITH CARE
+          </p>
+
+          <h1>
+            More time for <em>living.</em><br>
+            A home that feels <em>lovely.</em>
+          </h1>
+
+          <p class="hero-description">
+            Friendly, professional home cleaning in Kettering
+            and surrounding areas. Because coming home should
+            be the best part of your day.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#contact" class="btn btn-primary">
+              Book a free home visit <span>→</span>
+            </a>
+
+            <a href="#about" class="text-link">
+              Get to know us <span>→</span>
+            </a>
+
+          </div>
+
+          <div class="hero-trust">
+
+            <span class="hero-trust-icon">✓</span>
+
+            <div>
+              <strong>
+                Experience you can feel good about
+              </strong>
+              <small>
+                8 years' experience · Fully insured · DBS checked
+              </small>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hero-visual">
+
+          <div class="hero-image">
+            <img
+              src="hero-bathroom.jpg"
+              alt="Clean bathroom with white tiles and a pedestal sink">
+          </div>
+
+          <div class="hero-circle">
+            <span>care in<br>every detail</span>
+            <span>✦</span>
+          </div>
+
+          <div class="hero-floating-card">
+            <span class="floating-icon">⌂</span>
+
+            <div>
+              <strong>Made for your home</strong>
+              <small>Personalised quotes, no pressure.</small>
+            </div>
+          </div>
+
+          <span class="hero-image-caption">
+            FRESH SPACES · CALMER DAYS
+          </span>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST HIGHLIGHTS -->
+    <section class="trust-strip">
+      <div class="container trust-grid">
+
+        <div class="trust-item">
+          <span class="trust-icon">◷</span>
+          <div>
+            <strong>8 years of experience</strong>
+            <small>Knowledge that comes with practice</small>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <span class="trust-icon">✓</span>
+          <div>
+            <strong>Fully insured</strong>
+            <small>More peace of mind for you</small>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <span class="trust-icon">✧</span>
+          <div>
+            <strong>DBS checked</strong>
+            <small>Trust matters in your home</small>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <span class="trust-icon">♡</span>
+          <div>
+            <strong>Free home visits</strong>
+            <small>A quotation tailored to your space</small>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="intro section-padding">
+      <div class="container intro-content">
+
+        <span class="section-label">
+          ✦ A FRESHER WAY TO FEEL AT HOME
+        </span>
+
+        <h2>
+          It's the little things that make a
+          <em>big difference.</em>
+        </h2>
+
+        <p>
+          There's nothing quite like walking into a clean,
+          comfortable home. At E M Clean & Co, we make the
+          everyday feel a little easier, with a warm,
+          personal approach and cleaning that starts
+          with listening to you.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services section-padding" id="services">
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+            <span class="section-label">
+              THE SPACES THAT MATTER
+            </span>
+
+            <h2>
+              A little sparkle, <em>room by room.</em>
+            </h2>
+          </div>
+
+          <p>
+            Every home is different. During your free visit,
+            we'll talk through the spaces you'd like help
+            with and create a quotation around your needs.
+          </p>
+
+        </div>
+
+        <div class="services-grid">
+
+          <!-- KITCHENS -->
+          <article class="service-card">
+
+            <div class="service-image">
+              <img
+                src="kitchen.jpg"
+                alt="Freshly cleaned kitchen sink and countertop"
+                loading="lazy">
+            </div>
+
+            <div class="service-content">
+              <small>01 / HOME CARE</small>
+              <h3>Kitchens & everyday spaces</h3>
+              <p>
+                For the busy, lived-in areas that deserve
+                a little extra attention.
+              </p>
+            </div>
+
+          </article>
+
+          <!-- BATHROOMS -->
+          <article class="service-card">
+
+            <div class="service-image">
+              <img
+                src="bathroom.jpg"
+                alt="Beautifully cleaned modern bathroom and bathtub"
+                loading="lazy">
+            </div>
+
+            <div class="service-content">
+              <small>02 / FRESH SPACES</small>
+              <h3>Bathrooms & finishing touches</h3>
+              <p>
+                Talk us through the places you want looking
+                and feeling their best.
+              </p>
+            </div>
+
+          </article>
+
+          <!-- LIVING AREAS -->
+          <article class="service-card">
+
+            <div class="service-image">
+              <img
+                src="living-room.jpg"
+                alt="Clean carpeted dining and living area"
+                loading="lazy">
+            </div>
+
+            <div class="service-content">
+              <small>03 / YOUR PRIORITIES</small>
+              <h3>Living areas & beyond</h3>
+              <p>
+                A thoughtful approach shaped around
+                the way you use your home.
+              </p>
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="services-footer">
+
+          <p>
+            ✦ Not sure what you need?
+            That's what the free home visit is for.
+          </p>
+
+          <a href="#contact" class="text-link">
+            Let's chat about your home <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT ERIN -->
+    <section class="about section-padding" id="about">
+      <div class="container about-grid">
+
+        <div class="about-visual">
+
+          <!-- UPDATED KITCHEN PHOTOGRAPH -->
+          <div class="about-image">
+            <img
+              src="about-kitchen.jpg"
+              alt="Beautifully cleaned modern kitchen with a large island"
+              loading="lazy">
+          </div>
+
+          <div class="about-overlay">
+            <span>✦</span>
+            <strong>
+              A little care<br>
+              goes a long way.
+            </strong>
+          </div>
+
+          <div class="about-stat">
+            <strong>8</strong>
+            <span>
+              years of cleaning<br>
+              experience
+            </span>
+          </div>
+
+        </div>
+
+        <div class="about-content">
+
+          <span class="section-label">
+            A FRIENDLY FACE BEHIND THE CLEAN
+          </span>
+
+          <h2>Hello, I'm <em>Erin.</em></h2>
+
+          <p class="about-lead">
+            I believe a great cleaning service should feel
+            personal, reliable and easy from the very first hello.
+          </p>
+
+          <p>
+            With 8 years of experience in the cleaning industry,
+            I know that every home has its own routines and
+            priorities. That's why I offer a free home visit:
+            so we can meet, talk through what you're looking
+            for and work out a quotation that suits your space.
+          </p>
+
+          <p>
+            I'm fully insured and DBS checked, and I proudly
+            offer my services in Kettering and the surrounding areas.
+          </p>
+
+          <div class="erin-signature">
+            <span>Erin ♡</span>
+            <small>E M CLEAN & CO</small>
+          </div>
+
+          <a href="#contact" class="btn btn-outline">
+            Arrange a free visit <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="process section-padding" id="how-it-works">
+      <div class="container">
+
+        <div class="process-heading">
+
+          <span class="section-label">NICE & SIMPLE</span>
+
+          <h2>
+            A cleaner home starts <em>here.</em>
+          </h2>
+
+          <p>Getting started couldn't be easier.</p>
+        </div>
+
+        <div class="process-grid">
+
+          <div class="process-step">
+            <span class="step-number">01</span>
+            <h3>Say hello</h3>
+            <p>
+              Get in touch and tell us a little about
+              your home and what you're looking for.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="step-number">02</span>
+            <h3>Free home visit</h3>
+            <p>
+              We'll arrange a convenient time to meet
+              and chat through your cleaning priorities.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="step-number">03</span>
+            <h3>Your personal quote</h3>
+            <p>
+              You'll receive a quotation based on your
+              home and your individual needs.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="process-bottom">
+
+          <a href="#contact" class="btn btn-light">
+            Let's get started <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RESULTS GALLERY REMOVED AS REQUESTED -->
+
+    <!-- CUSTOMER REVIEWS -->
+    <section class="reviews section-padding" id="reviews">
+      <div class="container">
+
+        <div class="reviews-heading">
+
+          <span class="section-label">KIND WORDS</span>
+
+          <h2>
+            Good work deserves <em>kind words.</em>
+          </h2>
+
+          <p>
+            A few lovely words shared by our customers.
+          </p>
+
+        </div>
+
+        <!-- REVIEWS ARE INSERTED BY JAVASCRIPT -->
+        <div class="reviews-grid" id="reviewsGrid"></div>
+
+        <div class="reviews-bottom">
+
+          <span>
+            ♡ Real experiences, from real customers.
+          </span>
+
+          <a
+            href="https://www.facebook.com/profile.php?id=61579246101354"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-link">
+            Find us on Facebook <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS -->
+    <section class="faq section-padding">
+      <div class="container faq-grid">
+
+        <div>
+
+          <span class="section-label">
+            GOOD TO KNOW
+          </span>
+
+          <h2>
+            A few little <em>questions?</em>
+          </h2>
+
+          <p>
+            Here's what you might want to know
+            before getting in touch.
+          </p>
+
+          <a href="#contact" class="text-link">
+            Ask us anything <span>→</span>
+          </a>
+
+        </div>
+
+        <div class="faq-list">
+
+          <details>
+            <summary>Is the home visit really free?</summary>
+            <p>
+              Yes. Erin offers a free home visit to discuss
+              what you're looking for and provide a
+              personalised quotation.
+            </p>
+          </details>
+
+          <details>
+            <summary>Which areas do you cover?</summary>
+            <p>
+              E M Clean & Co serves Kettering and surrounding
+              areas. If you're nearby, get in touch with
+              your postcode and we can confirm coverage.
+            </p>
+          </details>
+
+          <details>
+            <summary>Are you insured and DBS checked?</summary>
+            <p>
+              Yes. Erin confirms that she is fully insured
+              and DBS checked.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              Can I discuss exactly what I need cleaned?
+            </summary>
+            <p>
+              Absolutely. That's what the initial conversation
+              and free home visit are for — understanding
+              your home and your priorities.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact section-padding" id="contact">
+      <div class="container contact-grid">
+
+        <div class="contact-info">
+
+          <span class="section-label">
+            LET'S TALK ABOUT YOUR HOME
+          </span>
+
+          <h2>
+            Ready to come home to <em>lovely?</em>
+          </h2>
+
+          <p>
+            Tell us a little about what you're looking for,
+            and take the first step towards your free
+            home visit and personalised quotation.
+          </p>
+
+          <div class="contact-divider"></div>
+
+          <!-- PHONE -->
+          <div class="contact-detail">
+
+            <span class="contact-detail-icon">☎</span>
+
+            <div>
+              <small>GIVE US A CALL</small>
+              <a href="tel:+447787404493">
+                07787 404493
+              </a>
+            </div>
+
+          </div>
+
+          <!-- EMAIL -->
+          <div class="contact-detail">
+
+            <span class="contact-detail-icon">✉</span>
+
+            <div>
+              <small>DROP US AN EMAIL</small>
+              <a href="mailto:emcleanandco@gmail.com">
+                emcleanandco@gmail.com
+              </a>
+            </div>
+
+          </div>
+
+          <!-- LOCATION -->
+          <div class="contact-detail">
+
+            <span class="contact-detail-icon">⌖</span>
+
+            <div>
+              <small>WHERE WE WORK</small>
+              <strong>Kettering & surrounding areas</strong>
+            </div>
+
+          </div>
+
+          <!-- FACEBOOK -->
+          <div class="contact-detail">
+
+            <span class="contact-detail-icon">f</span>
+
+            <div>
+              <small>FOLLOW US ON FACEBOOK</small>
+
+              <a
+                href="https://www.facebook.com/profile.php?id=61579246101354"
+                target="_blank"
+                rel="noopener noreferrer">
+                Facebook ↗
+              </a>
+            </div>
+
+          </div>
+
+          <!-- INSTAGRAM -->
+          <div class="contact-detail">
+
+            <span class="contact-detail-icon instagram-contact-icon">
+              I
+            </span>
+
+            <div>
+              <small>FOLLOW US ON INSTAGRAM</small>
+
+              <a
+                href="https://www.instagram.com/emcleanandco/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer">
+                Instagram ↗
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- FREE HOME VISIT ENQUIRY FORM -->
+        <div class="contact-card">
+
+          <div class="contact-form-heading">
+
+            <span class="section-label">
+              YOUR FREE HOME VISIT
+            </span>
+
+            <h3>Let's get acquainted.</h3>
+
+            <p>No pressure, just a friendly first hello.</p>
+
+          </div>
+
+          <!-- ORIGINAL EMAIL-APP FORM RESTORED -->
+          <form id="quoteForm" novalidate>
+
+            <div class="form-row">
+
+              <label>
+                Full name *
+
+                <input
+                  type="text"
+                  name="name"
+                  id="fullName"
+                  placeholder="Your name"
+                  autocomplete="name"
+                  maxlength="100"
+                  required>
+              </label>
+
+              <label>
+                Postcode
+
+                <input
+                  type="text"
+                  name="postcode"
+                  id="postcode"
+                  placeholder="e.g. NN15"
+                  autocomplete="postal-code"
+                  maxlength="16">
+              </label>
+
+            </div>
+
+            <div class="form-row">
+
+              <label>
+                Email address *
+
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  maxlength="150"
+                  required>
+              </label>
+
+              <label>
+                Phone number
+
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="Your phone number"
+                  autocomplete="tel"
+                  maxlength="35">
+              </label>
+
+            </div>
+
+            <label>
+              Tell us a little about your home
+
+              <textarea
+                name="message"
+                id="message"
+                rows="4"
+                maxlength="1500"
+                placeholder="What would you like a hand with?"></textarea>
+            </label>
+
+            <!-- UPDATED DISCLAIMER -->
+            <p class="form-disclaimer">
+              This button opens your email application with
+              your enquiry already prepared. Please press
+              Send in your email app to contact Erin.
+              Nothing is automatically submitted by this website.
+            </p>
+
+            <!-- UPDATED BUTTON -->
+            <button
+              type="submit"
+              class="btn btn-primary submit-btn">
+              Prepare my free quote enquiry <span>→</span>
+            </button>
+
+            <p
+              id="formError"
+              class="form-error"
+              role="alert"
+              hidden>
+              Please enter your name and a valid email address.
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-grid">
+
+      <div class="footer-about">
+
+        <a href="#home" class="logo footer-logo">
+
+          <span class="logo-icon">
+            <img src="em-logo.png" alt="">
+          </span>
+
+          <span class="logo-text">
+            <strong>E M CLEAN <span>&</span> CO</strong>
+            <small>HOME CLEANING · KETTERING</small>
+          </span>
+
+        </a>
+
+        <p>
+          Friendly, professional home cleaning with a
+          personal touch, in Kettering and surrounding areas.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Explore</h4>
+
+        <a href="#services">What we do</a>
+        <a href="#about">Meet Erin</a>
+        <a href="#reviews">Kind words</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Get in touch</h4>
+
+        <a href="tel:+447787404493">
+          07787 404493
+        </a>
+
+        <a href="mailto:emcleanandco@gmail.com">
+          emcleanandco@gmail.com
+        </a>
+
+        <a
+          href="https://www.facebook.com/profile.php?id=61579246101354"
+          target="_blank"
+          rel="noopener noreferrer">
+          Facebook ↗
+        </a>
+
+        <a
+          href="https://www.instagram.com/emcleanandco/?hl=en"
+          target="_blank"
+          rel="noopener noreferrer">
+          Instagram ↗
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- BOTTOM FOOTER -->
+    <div class="container footer-bottom">
+
+      <span>
+        © <span id="year">2026</span>
+        E M Clean & Co. All rights reserved.
+      </span>
+
+      <!-- SABR & SHAWQ CREDIT -->
+      <span class="developer-credit">
+
+        Website made by
+
+        <a
+          href="https://www.instagram.com/sabrshawq/?hl=en"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <img
+            src="sabr-shawq-logo.png"
+            alt="Sabr and Shawq logo">
+
+          Sabr & Shawq ↗
+
+        </a>
+
+      </span>
+
+      <span>Made with care in Kettering ♡</span>
+
+    </div>
+
+  </footer>
+
+  <!-- MOBILE STICKY QUOTE BUTTON -->
+  <a href="#contact" class="mobile-quote-button">
+    Book a free home visit →
+  </a>
+
 </body>
 </html>
